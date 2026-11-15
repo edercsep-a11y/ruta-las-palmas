@@ -1,0 +1,144 @@
+/* DATOS OFICIALES de "Arma tu ruta a Las Palmas" · Divina Data.
+   Este es el ÚNICO archivo que se edita para actualizar la información.
+   updated/short = fecha y hora de la última verificación. */
+window.DATA = {
+  updated: "Domingo 15 de noviembre, 1:00 a.m.",
+  short: "dom 15 nov, 1:00 a.m.",
+  help: "51993075817",
+  helpShow: "+51 993 075 817",
+  doors: {
+    "2": {g:"A", addr:"Av. Surco, cuadra 1", note:"Puerta del bloque 4: personas con discapacidad o movilidad reducida y 1 acompañante."},
+    "3": {g:"A", addr:"Jr. San Juan 54"},
+    "4": {g:"A", addr:"Av. Paseo de la República con calle El Cohete"},
+    "6": {g:"B", addr:"Av. Jorge Chamot Biggs con Jr. General Pedro Silva"},
+    "7": {g:"B", addr:"Av. Jorge Chamot Biggs con calle Rodrigo Franco"},
+    "8": {g:"B", addr:"Av. Jorge Chamot Biggs con Jr. Nicolás Copérnico"},
+    "9": {g:"B", addr:"Av. Jorge Chamot Biggs con calle Las Alondras"},
+    "10":{g:"B", addr:"Av. Jorge Chamot Biggs con calle Los Jilgueros"},
+    "11":{g:"B", addr:"Jr. Tambo Real con Jr. Tambo Grande"},
+    "12":{g:"C", addr:"Jr. Tambo Real 770, Surco"},
+    "13":{g:"C", addr:"Av. El Sol con Av. Las Gaviotas, Chorrillos"},
+    "14":{g:"C", addr:"Av. El Sol con Av. Las Gaviotas, Chorrillos", note:"Mismo cruce que la 13, pero es otra puerta."},
+    "15":{g:"C", addr:"Av. El Sol con calle Los Galenos, Chorrillos"},
+    "16":{g:"C", addr:"Av. El Sol con calle Los Alarifes, Chorrillos"}
+  },
+  side: {
+    A: {name:"lado de la Av. Aviación (puertas 2, 3 y 4)", walk:"Camina desde la Av. Aviación por las calles Surco, Soto Bermeo o Antares."},
+    B: {name:"lado de la Av. Los Próceres (puertas 6 a 11)", walk:"Desde la Av. Los Próceres, camina por las calles Pedro Silva, Vittore Carpaccio, Ariadna, Viña Lariena, Apolo o Vulcano."},
+    C: {name:"lado de Chorrillos y Av. El Sol (puertas 12 a 16)", walk:"Camina desde Matellini o la Av. El Sol por las calles Los Pumas, Matellini o Las Pléyades."}
+  },
+  turnos: {
+    t22:{label:"10:00 p.m.", sub:"domingo 15", txt:"domingo 15 a las 10:00 p.m."},
+    t01:{label:"1:00 a.m.", sub:"lunes 16", txt:"lunes 16 a la 1:00 a.m."},
+    t04:{label:"4:00 a.m.", sub:"lunes 16", txt:"lunes 16 a las 4:00 a.m."},
+    b4:{label:"Bloque 4", sub:"5 a 8 a.m. · puerta 2", txt:"lunes 16 de 5:00 a 8:00 a.m. (bloque 4)"}
+  },
+  /* Opciones de transporte. side = lado de Las Palmas al que te acerca (A, B, C) o X si te deja en un punto de bajada de la ATU. */
+  opts: {
+    L1N:{side:"A", title:"Línea 1 del Metro", price:"GRATIS", free:true,
+      when:"Gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
+      steps:["Ve a la estación de la <b>Línea 1</b> más cercana.","Sube en dirección a <b>Villa El Salvador</b>.","{BAJA_L1}"],
+      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal."},
+    L1S:{side:"A", title:"Línea 1 del Metro", price:"GRATIS", free:true,
+      when:"Gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
+      steps:["Ve a la estación de la <b>Línea 1</b> más cercana.","Sube en dirección a <b>Bayóvar</b> (hacia el norte).","{BAJA_L1}"],
+      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal."},
+    CA_ANG:{side:"A", conn:true, title:"Taxi + Línea 1 del Metro", price:"Tren GRATIS", free:true,
+      when:"Línea 1 gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
+      steps:["Toma un taxi o tu bus de siempre hasta la <b>estación Angamos</b> de la Línea 1 (Av. Aviación con Av. Angamos, Surquillo). Pide que te deje en la estación: cerca de Las Palmas las calles estarán cerradas.","Sube a la Línea 1 en dirección a <b>Villa El Salvador</b>.","{BAJA_L1} Desde Angamos son 2 o 3 estaciones."],
+      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal."},
+    CA_CUL:{side:"A", conn:true, title:"Taxi + Línea 1 del Metro", price:"Tren GRATIS", free:true,
+      when:"Línea 1 gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
+      steps:["Toma un taxi o tu bus de siempre hasta la <b>estación La Cultura</b> de la Línea 1 (Av. Aviación con Av. Javier Prado, San Borja).","Sube a la Línea 1 en dirección a <b>Villa El Salvador</b>.","{BAJA_L1} Desde La Cultura son 4 o 5 estaciones."],
+      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal."},
+    CB_TAXI:{side:"B", conn:true, title:"Taxi hasta la Av. Los Próceres", price:"Taxi",
+      when:"Puede haber tráfico y desvíos: sal con más tiempo.",
+      steps:["Toma un taxi hasta la <b>Av. Los Próceres con la Vía Expresa Sur</b>, donde llegan los corredores Azul y Rojo. Cerca de Las Palmas varias calles estarán cerradas: si el taxi no puede seguir, bájate y camina."]},
+    CC_MET:{side:"C", conn:true, title:"Taxi + Metropolitano", price:"Tarifa normal",
+      when:"Lechucero: domingo 11:30 p.m. → lunes 5:00 a.m. Desde las 8:00 a.m. del lunes cierran las estaciones del sur.",
+      steps:["Toma un taxi o tu bus de siempre hasta la <b>estación Angamos del Metropolitano</b> (Vía Expresa con Av. Angamos).","Sube al Metropolitano en dirección al sur (hacia <b>Matellini</b>).","Baja en <b>Escuela Militar</b>, <b>Terán</b>, <b>Rosario de Villa</b> o <b>Matellini</b>."]},
+    MET:{side:"C", title:"Metropolitano", price:"Tarifa normal",
+      when:"Lechucero: domingo 11:30 p.m. → lunes 5:00 a.m., entre Naranjal y Matellini. Desde las 8:00 a.m. del lunes cierran las estaciones del sur.",
+      steps:["Sube al <b>Metropolitano</b> en dirección al sur (hacia <b>Matellini</b>).","Baja en <b>Escuela Militar</b>, <b>Terán</b>, <b>Rosario de Villa</b> o <b>Matellini</b>.","Desde Matellini también sale el <b>Alimentador Las Palmas</b> por la Av. El Sol."]},
+    AZUL:{side:"B", title:"Corredor Azul 301 nocturno", price:"S/ 5",
+      when:"Domingo 15, 9:00 p.m. → lunes 16, 7:30 a.m.",
+      steps:["Sube al <b>Corredor Azul</b> en uno de sus paraderos (sale de 24 de Junio y pasa por Balta).","Quédate hasta el final: <b>Av. Los Próceres con Vía Expresa Sur</b>."]},
+    ROJO:{side:"B", title:"Corredor Rojo (servicio especial)", price:"S/ 5",
+      when:"Desde el domingo 15, 9:00 p.m. También funciona para el regreso.",
+      steps:["Sube al <b>Corredor Rojo</b> en sus paraderos desde <b>Ceres</b> hasta <b>Evitamiento</b>.","Va por Evitamiento y la Vía Expresa Sur.","Baja en la <b>Av. Los Próceres</b>."]},
+    R8:{side:"B", title:"Bus especial ATU · Ruta 8 Vía Expresa Sur", price:"S/ 3",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
+      steps:["Sube en la <b>Av. República de Panamá</b> (paradero inicial Vía Expresa Sur).","Baja al final: <b>Av. Los Próceres</b>."]},
+    R1:{side:"X", title:"Bus especial ATU · Ruta 1 Ventanilla", price:"S/ 7",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
+      steps:["Sube en el <b>paradero Teléfono</b> (Av. Néstor Gambetta).","Pasa por Av. Elmer Faucett, Av. Venezuela, Av. La Paz, Av. El Ejército, Av. Benavides y Panamericana Sur.","Baja al final: <b>Mall del Sur</b>."]},
+    R2:{side:"X", title:"Bus especial ATU · Ruta 2 Ancón", price:"S/ 10",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
+      steps:["Sube en el <b>paradero Chacas</b>.","Pasa por Panamericana Norte, Vía de Evitamiento y Panamericana Sur.","Baja al final: <b>Mall del Sur</b>."]},
+    R3:{side:"X", title:"Bus especial ATU · Ruta 3 Carabayllo", price:"S/ 7",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
+      steps:["Sube en el <b>Mercado Torre Blanca</b>.","Pasa por Av. Túpac Amaru, Av. Naranjal, Av. Universitaria, Av. El Ejército, Av. Benavides y Panamericana Sur.","Baja al final: <b>Mall del Sur</b>."]},
+    R4:{side:"X", title:"Bus especial ATU · Ruta 4 San Juan de Lurigancho", price:"S/ 7",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
+      steps:["Sube en el <b>paradero La Capilla</b>.","Va por Av. Fernando Wiese, Canto Grande, Las Flores de Primavera, Alcaparras, Pirámides del Sol, Vía de Evitamiento y Panamericana Sur.","Paradas: Ampliación Oeste, Héroes del Cenepa, Canto Grande, Santa Rosa, Machu Picchu, El Sol, Basadre, Tusilagos, San Hilarión, Las Marticarias, Alcaparras, Tahuantinsuyo, Puente Nuevo, Santa Anita, Jockey, Primavera y Benavides.","Baja al final: <b>Mall del Sur</b>."]},
+    R5:{side:"X", title:"Bus especial ATU · Ruta 5 Ate", price:"S/ 7",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
+      steps:["Sube en el <b>Real Plaza Santa Clara</b>.","Pasa por Av. Nicolás Ayllón, Vía de Evitamiento y Panamericana Sur.","Baja al final: <b>Mall del Sur</b>."]},
+    R6:{side:"X", title:"Bus especial ATU · Ruta 6 Villa El Salvador", price:"S/ 7",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
+      steps:["Sube en <b>Mega Plaza VES</b>.","Pasa por Av. Lima, Av. Revolución, Av. Miguel Iglesias, Av. Vargas Machuca y Av. Alipio Ponce.","Baja al final: <b>Guardia Civil</b>."]},
+    R7:{side:"X", title:"Bus especial ATU · Ruta 7 Lurín", price:"S/ 8",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
+      steps:["Sube en el <b>Km 40 de la Antigua Panamericana Sur</b>.","Pasa por la Antigua Panamericana Sur y la Av. Alipio Ponce.","Baja al final: <b>Guardia Civil</b>."]}
+  },
+  /* Distritos: opciones en orden de recomendación */
+  zones: [
+    {zone:"Lima Norte", list:[
+      ["Ancón",["R2"]],["Santa Rosa",["R2"]],["Puente Piedra",["R2","MET"]],["Carabayllo",["R3","MET"]],["Comas",["R3","MET"]],
+      ["Independencia",["R3","MET"]],["Los Olivos",["R3","MET"]],["San Martín de Porres",["R3","MET"]],["Rímac",["MET","AZUL","CA_CUL"]]]},
+    {zone:"Lima Centro", list:[
+      ["Cercado de Lima",["AZUL","MET","L1N"]],["Breña",["AZUL","MET","CA_CUL"]],["La Victoria",["L1N","MET","CB_TAXI"]],["Jesús María",["AZUL","MET","CA_CUL"]],
+      ["Lince",["AZUL","MET","CA_CUL"]],["Pueblo Libre",["AZUL","MET","CA_CUL"]],["Magdalena del Mar",["AZUL","MET","CA_CUL"]],["San Miguel",["AZUL","MET","R1","CA_CUL"]],
+      ["San Isidro",["MET","AZUL","R8","CA_ANG"]],["Miraflores",["MET","AZUL","R8","CA_ANG"]],["Barranco",["MET","R8","AZUL","CA_ANG"]],["Surquillo",["L1N","R8","MET"]],
+      ["San Borja",["L1N","CB_TAXI","CC_MET"]],["San Luis",["L1N","CB_TAXI","CC_MET"]]]},
+    {zone:"Lima Este", list:[
+      ["San Juan de Lurigancho",["L1N","R4"]],["El Agustino",["L1N","R5"]],["Ate",["R5","ROJO"]],["Santa Anita",["R4","ROJO"]],
+      ["La Molina",["ROJO","CA_CUL","CC_MET"]],["Chaclacayo",["R5","ROJO"]],["Lurigancho-Chosica",["R5","ROJO"]],["Cieneguilla",["R5","ROJO"]]]},
+    {zone:"Lima Sur", list:[
+      ["Santiago de Surco",["L1N","CB_TAXI","CC_MET"]],["Chorrillos",["MET","CA_ANG","CB_TAXI"]],["San Juan de Miraflores",["L1S","R6"]],["Villa María del Triunfo",["L1S","CB_TAXI","CC_MET"]],
+      ["Villa El Salvador",["L1S","R6"]],["Lurín",["R7"]],["Pachacámac",["R7"]],["Punta Hermosa",["R7"]],["Punta Negra",["R7"]],
+      ["San Bartolo",["R7"]],["Santa María del Mar",["R7"]],["Pucusana",["R7"]]]},
+    {zone:"Callao", list:[
+      ["Ventanilla",["R1"]],["Mi Perú",["R1"]],["Callao (Cercado)",["R1"]],["Bellavista",["R1"]],["Carmen de la Legua-Reynoso",["R1"]],
+      ["La Perla",["R1"]],["La Punta",["R1"]]]}
+  ],
+  /* Notas extra por distrito */
+  notes: {
+    "Santa Anita":"La Ruta 4 tiene una parada llamada Santa Anita, en la Vía de Evitamiento.",
+    "Santa Rosa":"El paradero inicial de la Ruta 2 es Chacas (Ancón). El bus sigue por la Panamericana Norte.",
+    "Puente Piedra":"El paradero inicial de la Ruta 2 es Chacas (Ancón). El bus sigue por la Panamericana Norte.",
+    "Callao (Cercado)":"El paradero inicial de la Ruta 1 es Teléfono (Ventanilla). El bus pasa por Av. Néstor Gambetta y Av. Elmer Faucett.",
+    "Bellavista":"El paradero inicial de la Ruta 1 es Teléfono (Ventanilla). El bus pasa por Av. Elmer Faucett y Av. Venezuela.",
+    "Carmen de la Legua-Reynoso":"El paradero inicial de la Ruta 1 es Teléfono (Ventanilla). El bus pasa por Av. Elmer Faucett y Av. Venezuela.",
+    "La Perla":"El paradero inicial de la Ruta 1 es Teléfono (Ventanilla). El bus pasa por Av. Elmer Faucett y Av. Venezuela.",
+    "La Punta":"El paradero inicial de la Ruta 1 es Teléfono (Ventanilla). El bus pasa por Av. Elmer Faucett y Av. Venezuela.",
+    "San Miguel":"La Ruta 1 pasa por la Av. La Paz.",
+    "Chorrillos":"Si vives cerca, las puertas 13 a 16 están en la Av. El Sol, en Chorrillos.",
+    "Santiago de Surco":"Si vives cerca de la base, puedes llegar caminando: no vayas en auto, las calles estarán cerradas.",
+    "Barranco":"Ojo: la Av. Bolognesi (de Escuela Militar a República de Panamá) estará cerrada del domingo 10 p.m. al lunes 5 p.m.",
+    "Lurigancho-Chosica":"El paradero inicial de la Ruta 5 es el Real Plaza Santa Clara (Ate).",
+    "Chaclacayo":"El paradero inicial de la Ruta 5 es el Real Plaza Santa Clara (Ate).",
+    "Cieneguilla":"El paradero inicial de la Ruta 5 es el Real Plaza Santa Clara (Ate).",
+    "Pachacámac":"El paradero inicial de la Ruta 7 es el Km 40 de la Antigua Panamericana Sur.",
+    "Punta Hermosa":"El paradero inicial de la Ruta 7 es el Km 40 de la Antigua Panamericana Sur.",
+    "Punta Negra":"El paradero inicial de la Ruta 7 es el Km 40 de la Antigua Panamericana Sur.",
+    "San Bartolo":"El paradero inicial de la Ruta 7 es el Km 40 de la Antigua Panamericana Sur.",
+    "Santa María del Mar":"El paradero inicial de la Ruta 7 es el Km 40 de la Antigua Panamericana Sur.",
+    "Pucusana":"El paradero inicial de la Ruta 7 es el Km 40 de la Antigua Panamericana Sur."
+  },
+  sources: [
+    ["ATU: recorridos y paraderos de las 8 rutas","https://www.gob.pe/institucion/atu/noticias/1473616-atu-conoce-los-recorridos-y-paraderos-de-las-ocho-rutas-especiales-para-llegar-a-la-misa-del-papa-leon-xiv"],
+    ["Infobae (15 nov): Metropolitano, Línea 1, corredores y buses","https://www.infobae.com/peru/2026/11/15/misa-del-papa-leon-xiv-en-las-palmas-conoce-como-llegar-en-metropolitano-linea-1-corredores-y-buses-especiales/"],
+    ["Andina: horarios de ingreso","https://andina.pe/agencia/noticia-misa-del-papa-leon-xiv-las-palmas-cuando-podras-ingresar-y-hasta-hora-1099800.aspx"]
+  ]
+};
