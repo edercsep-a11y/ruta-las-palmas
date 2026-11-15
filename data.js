@@ -2,8 +2,8 @@
    Este es el ÚNICO archivo que se edita para actualizar la información.
    updated/short = fecha y hora de la última verificación. */
 window.DATA = {
-  updated: "Domingo 15 de noviembre, 2:45 a.m.",
-  short: "dom 15 nov, 2:45 a.m.",
+  updated: "Domingo 15 de noviembre, 2:50 a.m.",
+  short: "dom 15 nov, 2:50 a.m.",
   help: "51993075817",
   helpShow: "+51 993 075 817",
   doors: {
@@ -16,7 +16,7 @@ window.DATA = {
     "9": {g:"B", addr:"Av. Jorge Chamot Biggs con calle Las Alondras"},
     "10":{g:"B", addr:"Av. Jorge Chamot Biggs con calle Los Jilgueros"},
     "11":{g:"B", addr:"Jr. Tambo Real con Jr. Tambo Grande"},
-    "12":{g:"C", addr:"Jr. Tambo Real 770, Surco"},
+    "12":{g:"B", addr:"Jr. Tambo Real 770, Surco"},
     "13":{g:"C", addr:"Av. El Sol con Av. Las Gaviotas, Chorrillos"},
     "14":{g:"C", addr:"Av. El Sol con Av. Las Gaviotas, Chorrillos", note:"Mismo cruce que la 13, pero es otra puerta."},
     "15":{g:"C", addr:"Av. El Sol con calle Los Galenos, Chorrillos"},
@@ -24,8 +24,8 @@ window.DATA = {
   },
   side: {
     A: {name:"lado de la Av. Aviación (puertas 2, 3 y 4)", walk:"Camina desde la Av. Aviación por las calles Surco, Soto Bermeo o Antares."},
-    B: {name:"lado de la Av. Los Próceres (puertas 6 a 11)", walk:"Desde la Av. Los Próceres, camina por las calles Pedro Silva, Vittore Carpaccio, Ariadna, Viña Lariena, Apolo o Vulcano."},
-    C: {name:"lado de Chorrillos y Av. El Sol (puertas 12 a 16)", walk:"Camina desde Matellini o la Av. El Sol por las calles Los Pumas, Matellini o Las Pléyades."}
+    B: {name:"lado de la Av. Los Próceres (puertas 6 a 12)", walk:"Desde la Av. Los Próceres, camina por las calles Pedro Silva, Vittore Carpaccio, Ariadna, Viña Lariena, Apolo o Vulcano."},
+    C: {name:"lado de Chorrillos y Av. El Sol (puertas 13 a 16)", walk:"Camina desde Matellini o la Av. El Sol por las calles Los Pumas, Matellini o Las Pléyades."}
   },
   turnos: {
     t22:{label:"10:00 p.m.", sub:"domingo 15", txt:"domingo 15 a las 10:00 p.m."},
@@ -46,17 +46,19 @@ window.DATA = {
     CA_ANG:{side:"A", conn:true, title:"Taxi + Línea 1 del Metro", price:"Tren GRATIS", free:true,
       when:"Línea 1 gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
       steps:["Toma un taxi o tu bus de siempre hasta la <b>estación Angamos</b> de la Línea 1 (Av. Aviación con Av. Angamos, Surquillo). Pide que te deje en la estación: cerca de Las Palmas las calles estarán cerradas.","Sube a la Línea 1 en dirección a <b>Villa El Salvador</b>.","{BAJA_L1} Desde Angamos son 2 o 3 estaciones."],
-      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal."},
+      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal. El tramo en taxi no es parte del plan oficial de la ATU: es solo para llegar a la estación."},
     CA_CUL:{side:"A", conn:true, title:"Taxi + Línea 1 del Metro", price:"Tren GRATIS", free:true,
       when:"Línea 1 gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
       steps:["Toma un taxi o tu bus de siempre hasta la <b>estación La Cultura</b> de la Línea 1 (Av. Aviación con Av. Javier Prado, San Borja).","Sube a la Línea 1 en dirección a <b>Villa El Salvador</b>.","{BAJA_L1} Desde La Cultura son 4 o 5 estaciones."],
-      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal."},
+      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal. El tramo en taxi no es parte del plan oficial de la ATU: es solo para llegar a la estación."},
     CB_TAXI:{side:"B", conn:true, title:"Taxi hasta la Av. Los Próceres", price:"Taxi",
       when:"Puede haber tráfico y desvíos: sal con más tiempo.",
-      steps:["Toma un taxi hasta la <b>Av. Los Próceres con la Vía Expresa Sur</b>, donde llegan los corredores Azul y Rojo. Cerca de Las Palmas varias calles estarán cerradas: si el taxi no puede seguir, bájate y camina."]},
+      steps:["Toma un taxi hasta la <b>Av. Los Próceres con la Vía Expresa Sur</b>, donde llegan los corredores Azul y Rojo. Cerca de Las Palmas varias calles estarán cerradas: si el taxi no puede seguir, bájate y camina."],
+      warn:"El tramo en taxi no es parte del plan oficial de la ATU. Puede haber tráfico y calles cerradas."},
     CC_MET:{side:"C", conn:true, title:"Taxi + Metropolitano", price:"Tarifa normal",
       when:"Lechucero: domingo 11:30 p.m. → lunes 5:00 a.m. Desde las 8:00 a.m. del lunes cierran las estaciones del sur.",
-      steps:["Toma un taxi o tu bus de siempre hasta la <b>estación Angamos del Metropolitano</b> (Vía Expresa con Av. Angamos).","Sube al Metropolitano en dirección al sur (hacia <b>Matellini</b>).","Baja en <b>Escuela Militar</b>, <b>Terán</b>, <b>Rosario de Villa</b> o <b>Matellini</b>."]},
+      steps:["Toma un taxi o tu bus de siempre hasta la <b>estación Angamos del Metropolitano</b> (Vía Expresa con Av. Angamos).","Sube al Metropolitano en dirección al sur (hacia <b>Matellini</b>).","Baja en <b>Escuela Militar</b>, <b>Terán</b>, <b>Rosario de Villa</b> o <b>Matellini</b>."],
+      warn:"El tramo en taxi no es parte del plan oficial de la ATU. Puede haber tráfico y calles cerradas."},
     MET:{side:"C", title:"Metropolitano", price:"Tarifa normal",
       when:"Lechucero: domingo 11:30 p.m. → lunes 5:00 a.m., entre Naranjal y Matellini. Desde las 8:00 a.m. del lunes cierran las estaciones del sur.",
       steps:["Sube al <b>Metropolitano</b> en dirección al sur (hacia <b>Matellini</b>).","Baja en <b>Escuela Militar</b>, <b>Terán</b>, <b>Rosario de Villa</b> o <b>Matellini</b>.","Desde Matellini también sale el <b>Alimentador Las Palmas</b> por la Av. El Sol."]},
