@@ -108,6 +108,11 @@ details.more[open]>summary::after{transform:rotate(45deg)}
 .actions{display:grid;gap:12px;margin-top:22px}
 .foot{margin-top:28px;font-size:15px;color:var(--mut);line-height:1.5}
 .foot a{color:var(--mar);font-weight:700}
+.help{position:fixed;inset:0;background:rgba(43,37,35,.55);display:flex;align-items:flex-end;justify-content:center;z-index:10;padding:14px}
+.help .box{background:var(--card);border-radius:22px;padding:22px 20px 18px;max-width:520px;width:100%;font-size:18px;line-height:1.45;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.help h5{font-family:var(--disp);font-weight:800;font-size:22px;color:var(--mar);margin:0 0 10px}
+.help ol{margin:0 0 14px;padding-left:24px;list-style:decimal}.help .box li{margin:0;padding:8px 0 8px 4px;border-top:0}.help .box li::before{content:none}
+.inapp{background:#FFF4D6;border:2px solid var(--gold);border-radius:16px;padding:12px 14px;font-size:17px;margin:0 0 12px}
 .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:#fff;font-weight:700;border-radius:14px;padding:12px 18px;font-size:17px;transition:opacity .2s var(--ease),transform .2s var(--ease);pointer-events:none;z-index:9}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .reveal{animation:rise .45s var(--ease) both}
@@ -164,6 +169,7 @@ details.more[open]>summary::after{transform:rotate(45deg)}
 <footer class="foot" id="foot"></footer>
 </div>
 <div class="toast" id="toast" role="status"></div>
+<div class="help hidden" id="help" role="dialog" aria-modal="true" aria-labelledby="help-t"><div class="box"><h5 id="help-t">Cómo guardar y enviar tu imagen</h5><div id="help-b"></div><button class="btn main" id="help-x" type="button" style="margin-top:6px">Entendido</button></div></div>
 
 <script>document.write('<script src="data.js?v='+Date.now()+'"><\/script>')</script>
 <script>
@@ -173,6 +179,11 @@ const DATA = window.DATA;
 
 const $=s=>document.querySelector(s);
 const state={dist:"",door:"",turno:""};
+const STANDALONE="https://edercsep-a11y.github.io/ruta-las-palmas/";
+const UA=navigator.userAgent||"";
+const APP_NAME=/Instagram/i.test(UA)?"Instagram":/FBAN|FBAV|FB_IAB|FBIOS|Messenger/i.test(UA)?"Facebook":/TikTok|musical_ly|Bytedance/i.test(UA)?"TikTok":/Snapchat/i.test(UA)?"Snapchat":/Line\//i.test(UA)?"LINE":"";
+const IN_APP=!!APP_NAME;
+let IN_FRAME=false;try{IN_FRAME=window.self!==window.top}catch(e){IN_FRAME=true}
 const allDists={};
 DATA.zones.forEach(z=>z.list.forEach(([n,o])=>allDists[n]=o));
 
@@ -234,12 +245,14 @@ function render(){
     <p class="s">Guárdala y mándala a tu familia por WhatsApp. <span id="hold">También puedes mantener presionada la imagen para guardarla.</span></p>
     <img id="shot" alt="Imagen de tu ruta con el logo de Divina Data">
     <div class="actions">
-      <button class="btn wa hidden" id="share-btn" type="button">Compartir imagen por WhatsApp</button>
+      ${IN_APP?`<p class="inapp"><b>Estás viendo esto dentro de ${APP_NAME}.</b> Para descargar o enviar la imagen, toca los <b>tres puntos ⋯</b> de arriba y elige <b>Abrir en el navegador</b> (Chrome o Safari). O mantén presionada la imagen y elige <b>Guardar</b>.</p>`:""}
+      <button class="btn wa" id="share-btn" type="button">Enviar imagen por WhatsApp</button>
       <a class="btn main" id="dl" href="#" download="mi-ruta-las-palmas-divina-data.png" style="margin-top:0">Descargar imagen</a>
     </div></div>`;
   const R=$("#res");R.innerHTML=h;
   R.querySelectorAll(".pickbtn").forEach(b=>b.onclick=()=>choose(b.dataset.id));
   $("#share-btn").onclick=shareImg;
+  $("#dl").onclick=dlImg;
   choose(ids[0],true);
   R.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 }
@@ -370,14 +383,48 @@ async function drawImg(){
     ctx.restore()}
   // sello en la tarjeta de puerta / esquina
   if(IMG.logow&&DATA.doors[state.door]){/* drawn in layout */}
-  cv.toBlob(b=>{if(!b)return;IMG.blob=b;const u=URL.createObjectURL(b);const im=$("#shot");if(im){if(im._u)URL.revokeObjectURL(im._u);im._u=u;im.src=u}const dl=$("#dl");if(dl)dl.href=u;const sb=$("#share-btn");if(sb&&canShareFiles())sb.classList.remove("hidden")},"image/png");
+  cv.toBlob(b=>{if(!b)return;IMG.blob=b;const u=URL.createObjectURL(b);const im=$("#shot");if(im){try{im.src=cv.toDataURL("image/png")}catch(e){im.src=u}}const dl=$("#dl");if(dl){if(dl._u)URL.revokeObjectURL(dl._u);dl._u=u;dl.href=u}saveHash()},"image/png");
 }
 function canShareFiles(){try{const f=new File([new Blob(["x"],{type:"image/png"})],"x.png",{type:"image/png"});return !!(navigator.canShare&&navigator.canShare({files:[f]}))}catch(e){return false}}
 async function shareImg(){
-  if(!IMG.blob)return;
-  const file=new File([IMG.blob],"mi-ruta-las-palmas-divina-data.png",{type:"image/png"});
-  try{await navigator.share({files:[file],title:"Mi ruta a Las Palmas",text:"Mi ruta a la misa del Papa · hecha con Divina Data"})}
-  catch(e){if(e&&e.name==="AbortError")return;toast("No se pudo compartir: usa Descargar imagen")}
+  if(!IMG.blob){toast("Espera un segundo, estamos creando tu imagen");return}
+  if(canShareFiles()){
+    const file=new File([IMG.blob],"mi-ruta-las-palmas-divina-data.png",{type:"image/png"});
+    try{await navigator.share({files:[file]});return}
+    catch(e){if(e&&e.name==="AbortError")return}
+  }
+  if(IN_FRAME&&!IN_APP){openFull();return}
+  showHelp("wa");
+}
+function dlImg(ev){
+  if(!IMG.blob){ev.preventDefault();toast("Espera un segundo, estamos creando tu imagen");return}
+  if(IN_APP){ev.preventDefault();showHelp("dl");return}
+  if(IN_FRAME){ev.preventDefault();openFull();return}
+  setTimeout(()=>toast("Imagen descargada: búscala en tus Descargas o Galería"),400);
+}
+function openFull(){const w=window.open(STANDALONE+stateHash(),"_blank");if(!w)location.href=STANDALONE+stateHash();toast("Abrimos tu ruta en pantalla completa para guardarla")}
+function showHelp(kind){
+  const steps=IN_APP
+    ?`<p class="inapp" style="margin-top:0">Dentro de ${APP_NAME} los botones de descarga no funcionan.</p><ol><li><b>Mantén presionada la imagen</b> de tu ruta y toca <b>Guardar imagen</b>.</li><li>O toca los <b>tres puntos ⋯</b> de arriba → <b>Abrir en el navegador</b>, y ahí usa los botones.</li><li>Abre <b>WhatsApp</b>, entra al chat, toca el <b>clip 📎</b> o la <b>cámara</b> y elige la imagen de tu galería.</li></ol>`
+    :`<ol><li>Toca <b>Descargar imagen</b>, o <b>mantén presionada la imagen</b> y elige <b>Guardar imagen</b>.</li><li>Abre <b>WhatsApp</b> y entra al chat de tu familia.</li><li>Toca el <b>clip 📎</b> (o el <b>+</b>) y elige la imagen de tu galería o de tus descargas.</li></ol>`;
+  $("#help-b").innerHTML=steps;$("#help").classList.remove("hidden");$("#help-x").focus();
+}
+$("#help-x").onclick=()=>$("#help").classList.add("hidden");
+$("#help").addEventListener("click",e=>{if(e.target.id==="help")$("#help").classList.add("hidden")});
+function stateHash(){return "#"+new URLSearchParams({d:state.dist,p:state.door,t:state.turno,o:state.choice||"",b:($("#blk")&&$("#blk").value)||""}).toString()}
+function saveHash(){try{history.replaceState(null,"",stateHash())}catch(e){}}
+function loadHash(){
+  try{
+    const q=new URLSearchParams(location.hash.slice(1));const d=q.get("d"),p=q.get("p"),t=q.get("t");
+    if(!d||!allDists[d]||!p||!(DATA.doors[p]||p==="?")||!t||!DATA.turnos[t])return;
+    sel.value=d;state.dist=d;
+    const tb=[...tWrap.children][Object.keys(DATA.turnos).indexOf(t)];if(tb)tb.click();
+    const db=[...dWrap.children].find(x=>p==="?"?x.textContent.startsWith("No sé"):x.textContent===p);if(db)pick("door",p,dWrap,db);
+    if(q.get("b")&&$("#blk"))$("#blk").value=q.get("b");
+    check();render();
+    const o=q.get("o");if(o&&CUR.ids.includes(o))choose(o,true);
+    setTimeout(()=>{const s=$("#share");if(s)s.scrollIntoView({block:"start"})},500);
+  }catch(e){}
 }
 $("#blk").addEventListener("input",()=>{if($("#res").innerHTML)drawImg()});
 function toast(m){const e=$("#toast");e.textContent=m;e.classList.add("show");clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove("show"),1800)}
@@ -385,6 +432,7 @@ function toast(m){const e=$("#toast");e.textContent=m;e.classList.add("show");cl
 $("#foot").innerHTML=`<p><b>Información oficial al ${DATA.updated}</b>. Si algo cambia, lo actualizamos aquí y en nuestras historias de Instagram <b>@divina_data</b>.</p>
 <p>Esta guía recomienda opciones según los datos oficiales publicados; no es un GPS. Sigue siempre las indicaciones de la Policía y los voluntarios.</p>
 <p>Fuentes: ${DATA.sources.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join(" · ")}</p>`;
+loadHash();
 </script>
 </body>
 </html>
