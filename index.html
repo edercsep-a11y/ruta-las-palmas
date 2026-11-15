@@ -402,7 +402,7 @@ function dlImg(ev){
   if(IN_FRAME){ev.preventDefault();openFull();return}
   setTimeout(()=>toast("Imagen descargada: búscala en tus Descargas o Galería"),400);
 }
-function openFull(){const w=window.open(STANDALONE+stateHash(),"_blank");if(!w)location.href=STANDALONE+stateHash();toast("Abrimos tu ruta en pantalla completa para guardarla")}
+function openFull(){const u=STANDALONE+stateHash();let w=null;try{w=window.open(u,"_blank")}catch(e){}if(!w){try{window.top.location.href=u}catch(e){location.href=u}}toast("Abrimos tu ruta en pantalla completa para guardarla")}
 function showHelp(kind){
   const steps=IN_APP
     ?`<p class="inapp" style="margin-top:0">Dentro de ${APP_NAME} los botones de descarga no funcionan.</p><ol><li><b>Mantén presionada la imagen</b> de tu ruta y toca <b>Guardar imagen</b>.</li><li>O toca los <b>tres puntos ⋯</b> de arriba → <b>Abrir en el navegador</b>, y ahí usa los botones.</li><li>Abre <b>WhatsApp</b>, entra al chat, toca el <b>clip 📎</b> o la <b>cámara</b> y elige la imagen de tu galería.</li></ol>`
