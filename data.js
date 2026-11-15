@@ -2,8 +2,8 @@
    Este es el ÚNICO archivo que se edita para actualizar la información.
    updated/short = fecha y hora de la última verificación. */
 window.DATA = {
-  updated: "Domingo 15 de noviembre, 8:45 a.m.",
-  short: "dom 15 nov, 8:45 a.m.",
+  updated: "Domingo 15 de noviembre, 9:00 a.m.",
+  short: "dom 15 nov, 9:00 a.m.",
   help: "51993075817",
   helpShow: "+51 993 075 817",
   doors: {
@@ -64,7 +64,7 @@ window.DATA = {
       steps:["Sube al <b>Metropolitano</b> en dirección al sur (hacia <b>Matellini</b>).","Baja en <b>Escuela Militar</b>, <b>Terán</b>, <b>Rosario de Villa</b> o <b>Matellini</b>.","Desde Matellini también sale el <b>Alimentador Las Palmas</b> por la Av. El Sol."]},
     AZUL:{side:"B", title:"Corredor Azul 301 nocturno", price:"S/ 5",
       when:"Domingo 15, 9:00 p.m. → lunes 16, 7:30 a.m.",
-      steps:["Sube al <b>Corredor Azul</b> en uno de sus paraderos (sale de 24 de Junio y pasa por Balta).","Quédate hasta el final: <b>Av. Los Próceres con Vía Expresa Sur</b>."]},
+      steps:["Sube al <b>Corredor Azul 301</b> en el paradero de su ruta más cercano a ti, en dirección a <b>Barranco</b> (sur). Por ejemplo, en Miraflores: paraderos <b>28 de Julio</b> o <b>Benavides</b>. El servicio empieza en el paradero 24 de Junio (Rímac), recorre Av. Tacna, Garcilaso de la Vega y Arequipa, y para en Balta.","Quédate hasta el final: <b>Av. Los Próceres con Vía Expresa Sur</b>."]},
     ROJO:{side:"B", title:"Corredor Rojo (servicio especial)", price:"S/ 5",
       when:"Desde el domingo 15, 9:00 p.m. También funciona para el regreso.",
       steps:["Sube al <b>Corredor Rojo</b> en sus paraderos desde <b>Ceres</b> hasta <b>Evitamiento</b>.","Va por Evitamiento y la Vía Expresa Sur.","Baja en la <b>Av. Los Próceres</b>."]},
