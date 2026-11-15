@@ -208,6 +208,8 @@ function render(){
   let ids=[...allDists[state.dist]];
   ids=ids.filter(id=>!DATA.opts[id].conn||(g&&DATA.opts[id].side===g));
   if(g){const rank=id=>{const s=DATA.opts[id].side;return s===g?0:(s==="X"?1:2)};ids=ids.map((id,i)=>[id,i]).sort((a,b)=>rank(a[0])-rank(b[0])||a[1]-b[1]).map(x=>x[0])}
+  const TX=g?({A:"TX_A",B:"CB_TAXI",C:"TX_C"})[g]:"TX_ANY";
+  ids=ids.filter(x=>x!==TX);ids.push(TX);
   CUR={ids,g}; state.choice=ids[0];
   const T=DATA.turnos[state.turno], blk=blkVal();
   let h="";
@@ -215,7 +217,7 @@ function render(){
   if(d){h+=`<div class="door reveal"><span class="num">${door}</span><div><div class="lbl">Tu puerta</div><div class="addr">${d.addr}</div>${d.note?`<div style="font-size:15px;color:#F7EACB;margin-top:4px">${d.note}</div>`:""}</div></div>`}
   else{h+=`<div class="alert reveal">¿Sin entrada? Sácala gratis en Ticketmaster: el registro sigue abierto hasta el lunes. El P. Juan Bytton, secretario general de la visita papal, dijo que quien no tenga entrada podrá pedir su ingreso con su DNI; los que tienen entrada tienen prioridad.</div>`}
   if(ids.length>1)h+=`<p class="reveal" style="margin:18px 2px 0;font-weight:700;color:var(--mut);font-size:17px">Tienes ${ids.length} opciones. Elige la que te quede mejor y esa saldrá en tu imagen.</p>`;
-  if(g&&DATA.opts[ids[0]].side!==g)h+=`<div class="alert reveal" style="background:#5A1A1C">⚠️ Desde ${state.dist} no hay un transporte especial que te deje junto a tu puerta ${door}. Te mostramos la opción oficial más cercana y el camino a pie. Si vas con adultos mayores, sal con más tiempo.</div>`;
+  if(g&&DATA.opts[ids[0]].side!==g)h+=`<div class="alert reveal" style="background:#5A1A1C">⚠️ Desde ${state.dist} no hay un transporte especial que te deje junto a tu puerta ${door}. Te mostramos la opción oficial más cercana y el camino a pie. Si vas con adultos mayores, sal con más tiempo. Si nunca has usado buses, al final tienes la opción en taxi.</div>`;
   ids.forEach((id,i)=>{h+=optCard(id,i===0,g)});
   if(DATA.notes[state.dist])h+=`<div class="box reveal"><h4>Dato para ${state.dist}</h4><p style="margin:0;font-size:18.5px">${DATA.notes[state.dist]}</p></div>`;
   h+=`<div class="alert reveal">Entra antes de las 8:00 a.m. A esa hora se detiene el ingreso por el paso del papamóvil. La misa es a las 10:30 a.m.</div>`;
@@ -268,7 +270,7 @@ function optCard(id,best,g){
   const o=DATA.opts[id], steps=stepsFor(id), f=fit(id);
   const w=[o.warn,timeWarn(id)].filter(Boolean).join(" ");
   return `<article class="opt ${best?"best":""} reveal" data-id="${id}">
-    <div class="head"><div><span class="badge ${o.conn?"taxi":(best?"":"alt")}">${o.conn?"Opción con taxi":(best?"Te recomendamos":"Otra opción")}</span><h3>${o.title}</h3>${f?`<div style="margin-top:6px;font-weight:700;font-size:16.5px;color:${FIT[f][1]}">${FIT[f][0]}</div>`:""}</div><span class="price ${o.free?"free":""}">${o.price}</span></div>
+    <div class="head"><div><span class="badge ${o.conn?"taxi":(best?"":"alt")}">${o.taxi?"Opción en taxi":(o.conn?"Opción con taxi":(best?"Te recomendamos":"Otra opción"))}</span><h3>${o.title}</h3>${f?`<div style="margin-top:6px;font-weight:700;font-size:16.5px;color:${FIT[f][1]}">${FIT[f][0]}</div>`:""}</div><span class="price ${o.free?"free":""}">${o.price}</span></div>
     <p class="when"><span aria-hidden="true">🕘</span><span>${o.when}</span></p>
     <ol class="steps">${steps.map(s=>"<li>"+s+"</li>").join("")}</ol>
     ${w?`<p class="warn">${w}</p>`:""}
