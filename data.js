@@ -2,8 +2,8 @@
    Este es el ÚNICO archivo que se edita para actualizar la información.
    updated/short = fecha y hora de la última verificación. */
 window.DATA = {
-  updated: "Domingo 15 de noviembre, 3:40 p.m.",
-  short: "dom 15 nov, 3:40 p.m.",
+  updated: "Domingo 15 de noviembre, 4:45 p.m.",
+  short: "dom 15 nov, 4:45 p.m.",
   help: "51993075817",
   helpShow: "+51 993 075 817",
   doors: {
@@ -53,7 +53,7 @@ window.DATA = {
       warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal. El tramo en taxi no es parte del plan oficial de la ATU: es solo para llegar a la estación."},
     CB_TAXI:{side:"B", conn:true, taxi:true, title:"Taxi hasta la Av. Los Próceres", price:"Taxi",
       when:"Desde el domingo 6:00 p.m. hay calles cerradas alrededor de Las Palmas. Pide el taxi con anticipación y sal con más tiempo.",
-      steps:["Pide al taxi que te deje en la <b>Av. Los Próceres con la Vía Expresa Sur</b> (Surco), donde llegan los corredores Azul y Rojo. Es el punto más cercano a las puertas 6 a 12 donde puede llegar un vehículo."],
+      steps:["Pide al taxi que te deje en la <b>Av. Los Próceres con la Vía Expresa Sur</b> (Surco), donde llegan los corredores Azul, Rojo y Morado. Es el punto más cercano a las puertas 6 a 12 donde puede llegar un vehículo."],
       warn:"El taxi no puede llegar hasta la puerta: las calles de alrededor están cerradas a los autos. Bájate en el punto que te indicamos o donde te diga la policía, y sigue a pie. Usa un taxi de confianza o por aplicativo y acuerda el precio antes de subir. El taxi no es parte del plan oficial de la ATU. Muéstrale esta imagen al taxista."},
     TX_A:{side:"A", conn:true, taxi:true, title:"Taxi hasta la estación Ayacucho", price:"Taxi",
       when:"Desde el domingo 6:00 p.m. hay calles cerradas alrededor de Las Palmas. Pide el taxi con anticipación y sal con más tiempo.",
@@ -74,12 +74,15 @@ window.DATA = {
     MET:{side:"C", title:"Metropolitano", price:"Tarifa normal",
       when:"Lechucero: domingo 11:30 p.m. → lunes 5:00 a.m., entre Naranjal y Matellini. Desde las 8:00 a.m. del lunes cierran las estaciones del sur.",
       steps:["Sube al <b>Metropolitano</b> en dirección al sur (hacia <b>Matellini</b>).","Baja en <b>Escuela Militar</b>, <b>Terán</b>, <b>Rosario de Villa</b> o <b>Matellini</b>.","Desde Matellini también sale el <b>Alimentador Las Palmas</b> por la Av. El Sol."]},
-    AZUL:{side:"B", title:"Corredor Azul 301 nocturno", price:"S/ 5",
-      when:"Domingo 15, 9:00 p.m. → lunes 16, 7:30 a.m.",
-      steps:["Sube al <b>Corredor Azul 301</b> en el paradero de su ruta más cercano a ti, en dirección a <b>Barranco</b> (sur). Por ejemplo, en Miraflores: paraderos <b>28 de Julio</b> o <b>Benavides</b>. El servicio empieza en el paradero 24 de Junio (Rímac), recorre Av. Tacna, Garcilaso de la Vega y Arequipa, y para en Balta.","Quédate hasta el final: <b>Av. Los Próceres con Vía Expresa Sur</b>."]},
-    ROJO:{side:"B", title:"Corredor Rojo (servicio especial)", price:"S/ 5",
-      when:"Desde el domingo 15, 9:00 p.m. También funciona para el regreso.",
-      steps:["Sube al <b>Corredor Rojo</b> en sus paraderos desde <b>Ceres</b> hasta <b>Evitamiento</b>.","Va por Evitamiento y la Vía Expresa Sur.","Baja en la <b>Av. Los Próceres</b>."]},
+    AZUL:{side:"B", title:"Corredor Azul · servicio especial 201", price:"S/ 5",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 7:00 a.m.",
+      steps:["Sube al <b>servicio especial 201 del Corredor Azul</b>. Sale del paradero <b>Amancaes</b> (Rímac) y llega hasta la Av. Los Próceres. Si lo tomas en otro paradero del Corredor Azul, pregúntale al chofer si el bus va a <b>Próceres</b> antes de subir.","Quédate hasta el final: <b>Av. Los Próceres con Vía Expresa Sur</b>."]},
+    ROJO:{side:"B", title:"Corredor Rojo · servicio especial 201", price:"S/ 5",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 7:00 a.m.",
+      steps:["Sube al <b>servicio especial 201 del Corredor Rojo</b>. Sale de <b>Ceres</b> y va por la Av. Javier Prado, la Av. Aviación, la Panamericana Sur (Mall del Sur) y la Vía Expresa Sur. Si lo tomas en otro paradero, pregúntale al chofer si el bus va a <b>Próceres</b>.","Quédate hasta el final: <b>Av. Los Próceres</b>."]},
+    MORADO:{side:"B", title:"Corredor Morado · servicio especial 405", price:"S/ 5",
+      when:"Domingo 15, 10:00 p.m. → lunes 16, 7:00 a.m.",
+      steps:["Sube al <b>servicio especial 405 del Corredor Morado</b>. Sale de <b>Jicamarca</b>, pasa por la Av. Canaval y Moreyra (San Isidro) y sigue por la Vía Expresa y la Vía Expresa Sur. Si lo tomas en otro paradero, pregúntale al chofer si el bus va a <b>Próceres</b>.","Quédate hasta el final: <b>Av. Los Próceres</b>."]},
     R8:{side:"B", title:"Bus especial ATU · Ruta 8 Vía Expresa Sur", price:"S/ 3",
       when:"Domingo 15, 10:00 p.m. → lunes 16, 8:00 a.m.",
       steps:["Sube en la <b>Av. República de Panamá</b> (paradero inicial Vía Expresa Sur).","Baja al final: <b>Av. Los Próceres</b>."]},
@@ -113,10 +116,10 @@ window.DATA = {
     {zone:"Lima Centro", list:[
       ["Cercado de Lima",["AZUL","MET","L1N"]],["Breña",["AZUL","MET","CA_CUL"]],["La Victoria",["L1N","MET","CB_TAXI"]],["Jesús María",["AZUL","MET","CA_CUL"]],
       ["Lince",["AZUL","MET","CA_CUL"]],["Pueblo Libre",["AZUL","MET","CA_CUL"]],["Magdalena del Mar",["AZUL","MET","CA_CUL"]],["San Miguel",["AZUL","MET","R1","CA_CUL"]],
-      ["San Isidro",["MET","AZUL","R8","CA_ANG"]],["Miraflores",["MET","AZUL","R8","CA_ANG"]],["Barranco",["MET","R8","AZUL","CA_ANG"]],["Surquillo",["L1N","R8","MET"]],
-      ["San Borja",["L1N","CB_TAXI","CC_MET"]],["San Luis",["L1N","CB_TAXI","CC_MET"]]]},
+      ["San Isidro",["MET","AZUL","R8","MORADO","CA_ANG"]],["Miraflores",["MET","AZUL","R8","CA_ANG"]],["Barranco",["MET","R8","AZUL","CA_ANG"]],["Surquillo",["L1N","R8","MET"]],
+      ["San Borja",["L1N","ROJO","CB_TAXI","CC_MET"]],["San Luis",["L1N","CB_TAXI","CC_MET"]]]},
     {zone:"Lima Este", list:[
-      ["San Juan de Lurigancho",["L1N","R4"]],["El Agustino",["L1N","R5"]],["Ate",["R5","ROJO"]],["Santa Anita",["R4","ROJO"]],
+      ["San Juan de Lurigancho",["L1N","R4","MORADO"]],["El Agustino",["L1N","R5"]],["Ate",["R5","ROJO"]],["Santa Anita",["R4","ROJO"]],
       ["La Molina",["ROJO","CA_CUL","CC_MET"]],["Chaclacayo",["R5","ROJO"]],["Lurigancho-Chosica",["R5","ROJO"]],["Cieneguilla",["R5","ROJO"]]]},
     {zone:"Lima Sur", list:[
       ["Santiago de Surco",["L1N","CB_TAXI","CC_MET"]],["Chorrillos",["MET","CA_ANG","CB_TAXI"]],["San Juan de Miraflores",["L1S","R6"]],["Villa María del Triunfo",["L1S","CB_TAXI","CC_MET"]],
@@ -152,6 +155,8 @@ window.DATA = {
   },
   sources: [
     ["ATU: recorridos y paraderos de las 8 rutas","https://www.gob.pe/institucion/atu/noticias/1473616-atu-conoce-los-recorridos-y-paraderos-de-las-ocho-rutas-especiales-para-llegar-a-la-misa-del-papa-leon-xiv"],
+    ["ATU (15 nov): corredores Azul, Rojo y Morado toda la noche hasta Próceres por S/5","https://www.gob.pe/institucion/atu/noticias/1473892-mtc-atu-informa-sobre-servicios-del-metropolitano-y-corredores-complementarios-que-operaran-toda-la-noche-y-madrugada-por-misa-del-papa"],
+    ["RPP (15 nov, 1:48 p.m.): recorridos de los corredores","https://rpp.pe/lima/actualidad/lechuceros-para-las-palmas-atu-confirma-el-recorrido-y-tarifa-de-buses-para-asistentes-a-santa-misa-del-papa-leon-xiv-noticia-1717905"],
     ["Infobae (15 nov): Metropolitano, Línea 1, corredores y buses","https://www.infobae.com/peru/2026/11/15/misa-del-papa-leon-xiv-en-las-palmas-conoce-como-llegar-en-metropolitano-linea-1-corredores-y-buses-especiales/"],
     ["Andina: horarios de ingreso","https://andina.pe/agencia/noticia-misa-del-papa-leon-xiv-las-palmas-cuando-podras-ingresar-y-hasta-hora-1099800.aspx"]
   ]

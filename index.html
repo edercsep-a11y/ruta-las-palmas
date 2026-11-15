@@ -197,7 +197,7 @@ $("#go").addEventListener("click",render);
 function timeWarn(id){
   const t=state.turno;
   if(id==="MET"&&t==="t22")return "El Lechucero empieza a las 11:30 p.m. Antes de esa hora rige el horario normal del domingo.";
-  if(id==="AZUL"&&t==="b4")return "El Corredor Azul nocturno funciona solo hasta las 7:30 a.m.";
+  if((id==="AZUL"||id==="ROJO"||id==="MORADO")&&t==="b4")return "Este servicio especial funciona solo hasta las 7:00 a.m.";
   if((id==="L1N"||id==="L1S")&&t==="t22")return "La Línea 1 es gratis desde las 10:00 p.m. Si viajas antes, pagas el pasaje normal.";
   return "";
 }
