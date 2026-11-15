@@ -361,7 +361,7 @@ async function drawImg(){
   const fx=64+(IMG.logo?110*IMG.logo.width/IMG.logo.height+28:0);
   ctx.fillStyle=C.mar;ctx.font=`800 34px ${FD}`;ctx.fillText("Ruta hecha por Divina Data",fx,1760);
   ctx.fillStyle=C.ink;ctx.font=`700 27px ${FB}`;ctx.fillText("@divina_data · divinadataoficial.com",fx,1802);
-  ctx.fillStyle=C.mut;ctx.font=`400 22px ${FB}`;ctx.fillText("Info oficial al "+DATA.short+" · Foto: Arzobispado de Lima",64,1872);
+  ctx.fillStyle=C.mut;ctx.font=`400 22px ${FB}`;ctx.fillText("Info oficial al "+DATA.short,64,1872);
   ctx.fillText("Herramienta gratuita de Divina Data para ayudar a llegar a la misa del Papa.",64,1902);
   // marca de agua en toda la imagen
   if(IMG.logo){ctx.save();ctx.globalAlpha=0.07;ctx.translate(540,960);ctx.rotate(-0.38);const ww=300,wh=ww*IMG.logo.height/IMG.logo.width;
@@ -382,7 +382,7 @@ $("#blk").addEventListener("input",()=>{if($("#res").innerHTML)drawImg()});
 function toast(m){const e=$("#toast");e.textContent=m;e.classList.add("show");clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove("show"),1800)}
 
 $("#foot").innerHTML=`<p><b>Información oficial al ${DATA.updated}</b>. Si algo cambia, lo actualizamos aquí y en nuestras historias de Instagram <b>@divina_data</b>.</p>
-<p>Esta guía recomienda opciones según los datos oficiales publicados; no es un GPS. Sigue siempre las indicaciones de la Policía y los voluntarios. Foto: Arzobispado de Lima.</p>
+<p>Esta guía recomienda opciones según los datos oficiales publicados; no es un GPS. Sigue siempre las indicaciones de la Policía y los voluntarios.</p>
 <p>Fuentes: ${DATA.sources.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener">${n}</a>`).join(" · ")}</p>`;
 </script>
 </body>
