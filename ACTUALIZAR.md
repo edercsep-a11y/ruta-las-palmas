@@ -9,3 +9,4 @@
 
 ## Registro de cambios
 - 15 nov, 1:00 a.m.: versión inicial (rutas ATU R1–R8 con paraderos y precios, Línea 1 gratis dom 10 p.m.–lun 10 p.m., corredores Azul 301 y Rojo a S/5, Metropolitano Lechucero, puertas 2–16).
+- 15 nov, 2:45 a.m.: verificación manual, sin cambios en los datos. Se fuerza a cargar siempre la versión más reciente de los datos.
