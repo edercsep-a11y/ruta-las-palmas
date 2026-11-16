@@ -2,8 +2,8 @@
    Este es el ÚNICO archivo que se edita para actualizar la información.
    updated/short = fecha y hora de la última verificación. */
 window.DATA = {
-  updated: "Lunes 16 de noviembre, 8:40 a.m.",
-  short: "lun 16 nov, 8:40 a.m.",
+  updated: "Lunes 16 de noviembre, 9:40 a.m.",
+  short: "lun 16 nov, 9:40 a.m.",
   help: "51993075817",
   helpShow: "+51 993 075 817",
   doors: {
