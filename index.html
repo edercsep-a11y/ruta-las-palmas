@@ -263,6 +263,9 @@ function choose(id,quiet){
   drawImg();
   if(!quiet){toast("Ruta elegida: tu imagen está lista");$("#share").scrollIntoView({behavior:"smooth",block:"start"})}
 }
+function dirSurco(){return state.door==="2"
+  ?"Elige la dirección según dónde subes: desde <b>Jorge Chávez</b> o <b>Atocongo</b>, ve hacia <b>Bayóvar</b> (norte). Desde <b>Cabitos</b> o más al norte, ve hacia <b>Villa El Salvador</b> (sur). Si tu estación es <b>Ayacucho</b>, no subas al tren: sal y camina."
+  :"Elige la dirección según dónde subes: desde <b>Atocongo</b>, ve hacia <b>Bayóvar</b> (norte). Desde <b>Cabitos</b> o más al norte, ve hacia <b>Villa El Salvador</b> (sur). Si tu estación es <b>Ayacucho</b> o <b>Jorge Chávez</b>, no subas al tren: sal y camina."}
 function bajaL1(){return state.door==="2"?"Baja en <b>Ayacucho</b>.":"Baja en <b>Ayacucho</b> o <b>Jorge Chávez</b> (también puedes en Atocongo)."}
 function walkFor(g){
   if(g==="A"&&state.door==="2")return "Camina desde la Av. Aviación por la <b>calle Surco</b> hasta la <b>puerta 2</b> (Av. Surco, cuadra 1).";
@@ -270,7 +273,7 @@ function walkFor(g){
 }
 function fit(id){const o=DATA.opts[id],g=CUR.g;if(!g)return "";return o.side===g?"near":(o.side==="X"?"drop":"far")}
 function stepsFor(id){
-  const o=DATA.opts[id],g=CUR.g;let steps=o.steps.map(x=>x.replace("{BAJA_L1}",bajaL1()));
+  const o=DATA.opts[id],g=CUR.g;let steps=o.steps.map(x=>x.replace("{BAJA_L1}",bajaL1()).replace("{DIR_SURCO}",dirSurco()));
   if(g){
     const f=fit(id);
     if(f==="near")steps.push(walkFor(g));

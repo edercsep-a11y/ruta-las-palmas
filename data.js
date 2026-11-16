@@ -2,8 +2,8 @@
    Este es el ÚNICO archivo que se edita para actualizar la información.
    updated/short = fecha y hora de la última verificación. */
 window.DATA = {
-  updated: "Lunes 16 de noviembre, 12:40 a.m.",
-  short: "lun 16 nov, 12:40 a.m.",
+  updated: "Lunes 16 de noviembre, 1:40 a.m.",
+  short: "lun 16 nov, 1:40 a.m.",
   help: "51993075817",
   helpShow: "+51 993 075 817",
   doors: {
@@ -38,6 +38,10 @@ window.DATA = {
     L1N:{side:"A", title:"Línea 1 del Metro", price:"GRATIS", free:true,
       when:"Gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
       steps:["Ve a la estación de la <b>Línea 1</b> más cercana.","Sube en dirección a <b>Villa El Salvador</b>.","{BAJA_L1}"],
+      warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal."},
+    L1SU:{side:"A", title:"Línea 1 del Metro", price:"GRATIS", free:true,
+      when:"Gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
+      steps:["Ve a la estación de la <b>Línea 1</b> más cercana.","{DIR_SURCO}","{BAJA_L1}"],
       warn:"Necesitas tu tarjeta de la Línea 1: el lunes no habrá venta ni recarga. Si no tienes, pide ayuda al personal."},
     L1S:{side:"A", title:"Línea 1 del Metro", price:"GRATIS", free:true,
       when:"Gratis del domingo 15, 10 p.m., al lunes 16, 10 p.m. Funciona toda la noche.",
@@ -122,7 +126,7 @@ window.DATA = {
       ["San Juan de Lurigancho",["L1N","R4","MORADO"]],["El Agustino",["L1N","R5"]],["Ate",["R5","ROJO"]],["Santa Anita",["R4","ROJO"]],
       ["La Molina",["ROJO","CA_CUL","CC_MET"]],["Chaclacayo",["R5","ROJO"]],["Lurigancho-Chosica",["R5","ROJO"]],["Cieneguilla",["R5","ROJO"]]]},
     {zone:"Lima Sur", list:[
-      ["Santiago de Surco",["L1N","CB_TAXI","CC_MET"]],["Chorrillos",["MET","CA_ANG","CB_TAXI"]],["San Juan de Miraflores",["L1S","R6"]],["Villa María del Triunfo",["L1S","CB_TAXI","CC_MET"]],
+      ["Santiago de Surco",["L1SU","CB_TAXI","CC_MET"]],["Chorrillos",["MET","CA_ANG","CB_TAXI"]],["San Juan de Miraflores",["L1S","R6"]],["Villa María del Triunfo",["L1S","CB_TAXI","CC_MET"]],
       ["Villa El Salvador",["L1S","R6"]],["Lurín",["R7"]],["Pachacámac",["R7"]],["Punta Hermosa",["R7"]],["Punta Negra",["R7"]],
       ["San Bartolo",["R7"]],["Santa María del Mar",["R7"]],["Pucusana",["R7"]]]},
     {zone:"Callao", list:[
