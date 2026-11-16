@@ -126,7 +126,7 @@ window.DATA = {
       ["San Juan de Lurigancho",["L1N","R4","MORADO"]],["El Agustino",["L1N","R5"]],["Ate",["R5","ROJO"]],["Santa Anita",["R4","ROJO"]],
       ["La Molina",["ROJO","CA_CUL","CC_MET"]],["Chaclacayo",["R5","ROJO"]],["Lurigancho-Chosica",["R5","ROJO"]],["Cieneguilla",["R5","ROJO"]]]},
     {zone:"Lima Sur", list:[
-      ["Santiago de Surco",["L1SU","CB_TAXI","CC_MET"]],["Chorrillos",["MET","CA_ANG","CB_TAXI"]],["San Juan de Miraflores",["L1S","R6"]],["Villa María del Triunfo",["L1S","CB_TAXI","CC_MET"]],
+      ["Santiago de Surco",["L1SU","CB_TAXI","CC_MET"]],["Chorrillos",["MET","CB_TAXI"]],["San Juan de Miraflores",["L1S","R6"]],["Villa María del Triunfo",["L1S","CB_TAXI"]],
       ["Villa El Salvador",["L1S","R6"]],["Lurín",["R7"]],["Pachacámac",["R7"]],["Punta Hermosa",["R7"]],["Punta Negra",["R7"]],
       ["San Bartolo",["R7"]],["Santa María del Mar",["R7"]],["Pucusana",["R7"]]]},
     {zone:"Callao", list:[
