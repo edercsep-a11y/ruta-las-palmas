@@ -396,6 +396,14 @@ a{color:var(--azul)}
       enviarEnlace();
     });
   });
+  function enviarAltura(){
+    if(window.parent===window)return;
+    try{window.parent.postMessage({tipo:"divina-altura",alto:document.documentElement.scrollHeight},"*")}catch(e){}
+  }
+  window.addEventListener("load",enviarAltura);
+  window.addEventListener("resize",enviarAltura);
+  if(window.ResizeObserver){new ResizeObserver(enviarAltura).observe(document.body)}
+  enviarAltura();
 })();
 </script>
 </body>
