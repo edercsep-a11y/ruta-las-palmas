@@ -1,9 +1,9 @@
-# Arma tu ruta a Las Palmas · Divina Data
+# León XIV en el Perú · Divina Data
 
-Herramienta gratuita de **Divina Data** para ayudar a las personas a llegar a la misa del Papa León XIV en la Base Aérea Las Palmas (lunes 16 de noviembre de 2026).
+Página para descargar el documento con todas las homilías, discursos y oraciones del Papa León XIV en su viaje apostólico al Perú (11 al 16 de noviembre de 2026).
 
-Elige tu distrito, tu puerta y tu turno, y te muestra en qué ir, dónde bajar y por qué calles llegar a tu puerta, con datos oficiales (ATU, Línea 1, Metropolitano, Arzobispado de Lima).
+- Página: https://edercsep-a11y.github.io/ruta-las-palmas/
+- Documento: `Leon-XIV-en-Peru-discursos-y-homilias.pdf` (69 páginas)
+- Insertada en divinadataoficial.com
 
-Web: https://edercsep-a11y.github.io/ruta-las-palmas/
-
-@divina_data · divinadataoficial.com
+Antes, esta dirección tenía la herramienta "Arma tu ruta a Las Palmas"; su versión final queda en el historial del repositorio.
