@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>León XIV en el Perú: todos sus mensajes · Divina Data</title>
-<meta name="description" content="Descarga gratis el documento con todas las homilías, discursos y oraciones del Papa León XIV en su viaje apostólico al Perú (11 al 16 de noviembre de 2026).">
+<meta name="description" content="Descarga gratis el documento con todas las homilías, discursos y oraciones del Papa León XIV en su viaje apostólico al Perú (11 al 16 de noviembre de 2026). Con resúmenes, frases, palabras clave y preguntas para tu grupo.">
 <meta name="theme-color" content="#FDD82F">
 <meta property="og:title" content="León XIV en el Perú: todos sus mensajes, en un solo documento">
 <meta property="og:description" content="Homilías, discursos y oraciones del viaje apostólico. 69 páginas para leer, rezar y compartir. Descárgalo gratis.">
@@ -19,98 +19,177 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
 :root{
-  --amarillo:#FDD82F;
-  --amarillo-hondo:#F2C200;
-  --tinta:#22201C;
-  --tinta-suave:#4A4640;
+  --amarillo:#FDD82F;--amarillo-hondo:#F2C200;--amarillo-claro:#FFF4C2;
+  --tinta:#22201C;--tinta-suave:#4A4640;
   --azul:#1F4E8C;
-  --piedra:#F3F1EC;
-  --linea:#E3DED3;
-  --blanco:#FFFFFF;
+  --verde:#1F7A45;--verde-claro:#E4F3EA;
+  --rojo:#A8262D;--rojo-claro:#F8E6E6;
+  --piedra:#F3F1EC;--linea:#E3DED3;--blanco:#FFFFFF;
   --serif:"Playfair Display",Georgia,"Times New Roman",serif;
   --sans:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --ancho:1120px;
+  --salida:cubic-bezier(.23,1,.32,1);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--blanco);color:var(--tinta);font-family:var(--sans);font-size:19px;line-height:1.55}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--azul)}
-:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:6px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:8px}
 .envoltura{max-width:var(--ancho);margin:0 auto;padding:0 24px}
 
 /* Botones */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:14px 26px;border-radius:14px;font-family:var(--sans);font-size:19px;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s ease,background-color .15s ease,box-shadow .15s ease}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 24px;border-radius:14px;font-family:var(--sans);font-size:18px;font-weight:700;line-height:1.2;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .16s var(--salida),background-color .2s ease,border-color .2s ease}
 .btn svg{width:22px;height:22px;flex:none}
-.btn:active{transform:translateY(1px)}
-.btn-tinta{background:var(--tinta);color:var(--blanco)}
-.btn-tinta:hover{background:#000}
-.btn-borde{background:transparent;color:var(--tinta);border-color:var(--tinta)}
-.btn-borde:hover{background:rgba(34,32,28,.07)}
-.btn-wa{background:#1F8F4E;color:#fff}
-.btn-wa:hover{background:#18763F}
-.btn-amarillo{background:var(--amarillo);color:var(--tinta)}
-.btn-amarillo:hover{background:var(--amarillo-hondo)}
-.btn-claro{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)}
-.btn-claro:hover{background:rgba(255,255,255,.1)}
+.btn:active{transform:scale(.97)}
+.btn-tinta{background:var(--tinta);color:#fff}.btn-tinta:hover{background:#000}
+.btn-borde{background:transparent;color:var(--tinta);border-color:var(--tinta)}.btn-borde:hover{background:rgba(34,32,28,.06)}
+.btn-wa{background:#1F8F4E;color:#fff}.btn-wa:hover{background:#18763F}
+.btn-amarillo{background:var(--amarillo);color:var(--tinta)}.btn-amarillo:hover{background:var(--amarillo-hondo)}
+.btn-claro{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)}.btn-claro:hover{background:rgba(255,255,255,.1)}
 .acciones{display:flex;flex-wrap:wrap;gap:12px}
 
-/* Cabecera y portada */
+/* Portada */
 .portada{background:var(--amarillo);overflow:hidden}
 .barra{display:flex;align-items:center;justify-content:space-between;padding-top:22px;padding-bottom:6px}
 .barra img{height:46px;width:auto}
-.barra a.pdf-mini{font-weight:700;color:var(--tinta);text-decoration:none;border-bottom:2px solid var(--tinta);padding-bottom:2px;font-size:17px}
-.portada-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:36px;padding-bottom:72px}
+.portada-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-top:28px;padding-bottom:64px}
+.lema{display:inline-flex;align-items:center;gap:10px;margin:0 0 20px;font-family:var(--serif);font-style:italic;font-weight:600;font-size:21px}
+.lema::before{content:"";width:28px;height:2px;background:var(--tinta)}
 .portada h1{font-family:var(--serif);font-weight:800;font-size:clamp(42px,5.6vw,72px);line-height:1.03;letter-spacing:-.015em;margin:0 0 22px}
-.portada .entrada{font-size:21px;line-height:1.5;max-width:34em;margin:0 0 30px;color:var(--tinta)}
+.portada .entrada{font-size:21px;line-height:1.5;max-width:34em;margin:0 0 28px}
 .portada .ficha{margin:18px 0 0;font-size:16px;color:var(--tinta-suave)}
-.documento{position:relative;justify-self:center;width:min(380px,100%);text-decoration:none}
-.documento img{width:100%;height:auto;border-radius:6px;box-shadow:0 2px 0 rgba(0,0,0,.06),0 28px 60px -20px rgba(80,58,0,.55),0 10px 22px -10px rgba(80,58,0,.35);transform:rotate(-3.5deg);transform-origin:60% 80%;animation:asentar .9s cubic-bezier(.2,.8,.2,1) .15s both}
-.documento .lomo{position:absolute;inset:0;border-radius:6px;transform:rotate(-3.5deg) translate(14px,10px);background:#fff;box-shadow:0 18px 40px -22px rgba(80,58,0,.5);z-index:-1}
-@keyframes asentar{from{transform:rotate(0deg) translateY(26px);opacity:0}to{transform:rotate(-3.5deg) translateY(0);opacity:1}}
+.documento{position:relative;justify-self:center;width:min(370px,100%);text-decoration:none}
+.documento .hoja{display:block;position:relative;transform:rotate(-3.5deg);transform-origin:60% 80%;animation:asentar .9s var(--salida) .1s both;transition:transform .5s var(--salida)}
+.documento:hover .hoja{transform:rotate(-1.5deg) translateY(-6px)}
+.documento img{width:100%;border-radius:6px;box-shadow:0 2px 0 rgba(0,0,0,.06),0 28px 60px -20px rgba(80,58,0,.55),0 10px 22px -10px rgba(80,58,0,.35)}
+.documento .lomo{position:absolute;inset:0;border-radius:6px;transform:translate(12px,10px);background:#fff;z-index:-1;box-shadow:0 18px 40px -22px rgba(80,58,0,.5)}
+@keyframes asentar{from{transform:rotate(0) translateY(28px);opacity:0}to{transform:rotate(-3.5deg) translateY(0);opacity:1}}
 .aviso-app{display:none;background:#fff;border:2px solid var(--tinta);border-radius:14px;padding:14px 16px;font-size:17px;line-height:1.45;margin:0 0 18px;max-width:36em}
 .aviso-app.visible{display:block}
 
-/* Palabras */
-.palabras{padding:96px 0 40px}
-.palabras-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:end;margin-bottom:72px}
-.palabras-intro img{border-radius:10px;aspect-ratio:4/5;object-fit:cover;width:100%}
-.palabras-intro h2{font-family:var(--serif);font-weight:800;font-size:clamp(34px,4.2vw,52px);line-height:1.08;margin:0 0 18px;letter-spacing:-.01em}
-.palabras-intro p{font-size:21px;margin:0;max-width:30em;color:var(--tinta-suave)}
-.frases{list-style:none;margin:0;padding:0;max-width:880px;margin-left:auto}
-.frase{padding:44px 0;border-top:1px solid var(--linea)}
-.frase:last-child{border-bottom:1px solid var(--linea)}
-.frase .tema{font-weight:700;color:var(--azul);font-size:18px;margin:0 0 12px}
-.frase blockquote{margin:0;font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.3vw,40px);line-height:1.25;letter-spacing:-.005em;text-indent:-.42em}
-.frase .apoyo{margin:22px 0 0;padding-left:20px;border-left:4px solid var(--amarillo);font-family:var(--serif);font-size:22px;line-height:1.4}
-.frase figcaption,.frase .fuente{margin-top:16px;font-size:17px;color:var(--tinta-suave)}
-.frase a.pag{color:var(--tinta-suave);text-underline-offset:3px}
-.frase .oracion{display:inline-block;margin-top:22px;background:var(--amarillo);padding:6px 14px;border-radius:8px;font-family:var(--serif);font-weight:700;font-size:26px}
+/* Navegación de secciones */
+.secciones{position:sticky;top:0;z-index:15;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--linea)}
+.secciones ul{list-style:none;margin:0 auto;padding:10px 24px;max-width:var(--ancho);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.secciones ul::-webkit-scrollbar{display:none}
+.secciones a{display:block;white-space:nowrap;padding:9px 16px;border-radius:999px;text-decoration:none;color:var(--tinta-suave);font-weight:700;font-size:16px;transition:background-color .2s ease,color .2s ease}
+.secciones a:hover{background:var(--piedra);color:var(--tinta)}
+.secciones a[aria-current="true"]{background:var(--tinta);color:#fff}
+
+.cabeza{max-width:42em;margin-bottom:40px}
+.cabeza h2{font-family:var(--serif);font-weight:800;font-size:clamp(34px,4.2vw,52px);line-height:1.08;letter-spacing:-.01em;margin:0 0 14px}
+.cabeza p{font-size:20px;color:var(--tinta-suave);margin:0}
+section[id]{scroll-margin-top:64px}
+
+/* El viaje */
+.viaje{padding:88px 0 96px}
+.ruta{position:relative;list-style:none;margin:0 0 34px;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.ruta::before{content:"";position:absolute;left:8%;right:8%;top:35px;height:2px;background:repeating-linear-gradient(90deg,var(--tinta) 0 8px,transparent 8px 14px);opacity:.35}
+.ruta li{position:relative}
+.dia-btn{width:100%;background:none;border:0;cursor:pointer;padding:0 4px 8px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;border-radius:14px}
+.dia-btn .num{position:relative;width:70px;height:70px;border-radius:50%;display:grid;place-items:center;background:#fff;border:2px solid var(--tinta);font-family:var(--serif);font-weight:800;font-size:28px;transition:background-color .25s var(--salida),color .25s var(--salida),transform .25s var(--salida)}
+.dia-btn:hover .num{transform:translateY(-3px)}
+.dia-btn:active .num{transform:scale(.95)}
+.dia-btn .dn{font-weight:700;font-size:16px;line-height:1.2}
+.dia-btn .ciudad{font-size:15px;color:var(--tinta-suave);line-height:1.25}
+.dia-btn[aria-selected="true"] .num{background:var(--tinta);color:var(--amarillo)}
+.panel-cabeza{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--tinta)}
+.panel-cabeza h3{margin:0;font-family:var(--serif);font-weight:700;font-size:30px}
+.panel-cabeza span{color:var(--tinta-suave);font-size:17px}
+.mensajes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.mensaje{background:#fff;border:1px solid var(--linea);border-radius:16px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(10px);animation:aparecer .45s var(--salida) forwards}
+.mensaje:nth-child(2){animation-delay:.05s}.mensaje:nth-child(3){animation-delay:.1s}.mensaje:nth-child(4){animation-delay:.15s}.mensaje:nth-child(5){animation-delay:.2s}
+@keyframes aparecer{to{opacity:1;transform:none}}
+.mensaje .lugar{font-size:15px;font-weight:700;color:var(--azul);margin:0}
+.mensaje h4{margin:0;font-size:21px;line-height:1.3}
+.mensaje .resumen{margin:0;font-size:17px;color:var(--tinta-suave)}
+.mensaje blockquote{margin:4px 0 0;padding:10px 0 10px 16px;border-left:4px solid var(--amarillo);font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.35}
+.mensaje .leer{margin-top:auto;padding-top:8px;align-self:flex-start;font-weight:700;font-size:16px;color:var(--tinta);text-decoration:none;border-bottom:2px solid var(--amarillo-hondo);padding-bottom:2px}
+.mensaje .leer:hover{border-color:var(--tinta)}
+.mensaje.unico{grid-column:1/-1}
+
+/* Ideas */
+.ideas{background:var(--piedra);padding:88px 0 96px;overflow:hidden}
+.ideas-cabeza{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:end;margin-bottom:40px}
+.ideas-cabeza img{width:180px;aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+.ideas-cabeza .cabeza{margin:0}
+.pista{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 24px;padding:4px 24px 24px;margin:0 -24px;scrollbar-width:none;overscroll-behavior-x:contain}
+.pista::-webkit-scrollbar{display:none}
+.idea{flex:0 0 min(720px,86%);scroll-snap-align:start;background:#fff;border-radius:22px;padding:34px 34px 26px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--linea)}
+.idea .tema{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--azul);font-size:18px;margin:0}
+.idea .tema b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--amarillo);color:var(--tinta);font-family:var(--serif);font-size:17px;flex:none}
+.idea blockquote{margin:0;font-family:var(--serif);font-weight:600;font-size:clamp(25px,2.9vw,34px);line-height:1.28;text-indent:-.42em}
+.idea .fuente{margin:0;font-size:16px;color:var(--tinta-suave)}
+.idea .fuente a{color:var(--tinta-suave)}
+.idea .apoyo{margin:0;padding:12px 0 12px 16px;border-left:4px solid var(--amarillo);font-family:var(--serif);font-size:20px;line-height:1.4}
+.dialogar{margin-top:auto;border-top:1px solid var(--linea);padding-top:14px}
+.dialogar summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:700;font-size:17px;padding:6px 0;border-radius:8px}
+.dialogar summary::-webkit-details-marker{display:none}
+.mas{width:30px;height:30px;border-radius:50%;background:var(--piedra);display:grid;place-items:center;transition:transform .3s var(--salida),background-color .2s ease;font-size:20px;line-height:1;flex:none}
+details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
+.dialogar p{margin:8px 0 4px;font-size:18px;line-height:1.5;background:var(--amarillo-claro);border-radius:12px;padding:14px 16px;animation:aparecer .35s var(--salida) both}
+.controles{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:6px}
+.puntos{display:flex;gap:8px}
+.puntos button{width:10px;height:10px;border-radius:999px;border:0;padding:0;background:rgba(34,32,28,.22);cursor:pointer;transition:width .3s var(--salida),background-color .2s ease}
+.puntos button[aria-current="true"]{width:30px;background:var(--tinta)}
+.flechas{display:flex;align-items:center;gap:10px}
+.flechas .cuenta{font-size:16px;color:var(--tinta-suave);min-width:56px;text-align:center}
+.flecha{width:52px;height:52px;border-radius:50%;border:2px solid var(--tinta);background:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .16s var(--salida),background-color .2s ease,opacity .2s ease}
+.flecha:hover{background:var(--amarillo)}
+.flecha:active{transform:scale(.94)}
+.flecha:disabled{opacity:.3;cursor:default;background:#fff}
+.flecha svg{width:22px;height:22px}
+
+/* Palabras clave */
+.claves{padding:88px 0 96px}
+.glosario{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.termino{background:#fff;border:2px solid var(--tinta);border-radius:18px;transition:background-color .25s ease}
+.termino[open]{background:var(--amarillo-claro)}
+.termino summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 20px;font-family:var(--serif);font-weight:700;font-size:23px;line-height:1.2;border-radius:16px}
+.termino summary::-webkit-details-marker{display:none}
+.termino .def{padding:0 20px 20px;animation:aparecer .35s var(--salida) both}
+.termino .def p{margin:0 0 10px;font-size:17px;line-height:1.5}
+.termino .def a{font-size:15px;color:var(--tinta-suave)}
 
 /* Despedida */
-.despedida{position:relative;color:#fff;min-height:640px;display:flex;align-items:flex-end;margin-top:72px;background:#2a2722}
+.despedida{position:relative;color:#fff;min-height:620px;display:flex;align-items:flex-end;background:#2a2722}
 .despedida img{position:absolute;inset:0;width:100%;height:100% !important;object-fit:cover;object-position:50% 30%}
 .despedida::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,15,.05) 0%,rgba(20,18,15,.15) 35%,rgba(20,18,15,.82) 72%,rgba(20,18,15,.95) 100%)}
-.despedida .envoltura{position:relative;z-index:1;padding-top:200px;padding-bottom:64px;width:100%}
+.despedida .envoltura{position:relative;z-index:1;padding-top:200px;padding-bottom:60px;width:100%}
 .despedida blockquote{margin:0 0 14px;font-family:var(--serif);font-weight:800;font-size:clamp(34px,4.6vw,60px);line-height:1.08;max-width:15em;letter-spacing:-.01em}
-.despedida p{margin:0 0 30px;font-size:18px;color:#E9E4DA}
+.despedida p{margin:0 0 28px;font-size:18px;color:#E9E4DA}
 
-/* Índice */
-.indice{background:var(--piedra);padding:96px 0}
-.indice-cabeza{max-width:40em;margin-bottom:48px}
-.indice h2{font-family:var(--serif);font-weight:800;font-size:clamp(34px,4.2vw,52px);line-height:1.08;margin:0 0 16px}
-.indice-cabeza p{font-size:20px;color:var(--tinta-suave);margin:0}
-.dias{list-style:none;margin:0;padding:0;counter-reset:dia}
-.dia{display:grid;grid-template-columns:220px 1fr;gap:32px;padding:30px 0;border-top:2px solid var(--tinta)}
-.dia h3{margin:0;font-family:var(--serif);font-weight:700;font-size:26px;line-height:1.15}
-.dia h3 span{display:block;font-family:var(--sans);font-weight:400;font-size:17px;color:var(--tinta-suave);margin-top:6px}
-.textos{list-style:none;margin:0;padding:0}
-.textos li+li{border-top:1px solid var(--linea)}
-.textos a{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:baseline;padding:14px 10px 14px 0;text-decoration:none;color:var(--tinta);border-radius:8px}
-.textos a:hover .t{text-decoration:underline;text-decoration-color:var(--amarillo-hondo);text-decoration-thickness:3px;text-underline-offset:4px}
-.textos .t{font-weight:700;font-size:19px;line-height:1.35}
-.textos .l{display:block;font-weight:400;font-size:16px;color:var(--tinta-suave);margin-top:2px}
-.textos .p{font-size:16px;color:var(--tinta-suave);white-space:nowrap}
+/* Grupo */
+.grupo{padding:88px 0 40px}
+.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:paso}
+.pasos li{counter-increment:paso;background:var(--piedra);border-radius:18px;padding:26px 24px 24px}
+.pasos li::before{content:counter(paso);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--tinta);color:var(--amarillo);font-family:var(--serif);font-weight:800;font-size:22px;margin-bottom:16px}
+.pasos h3{margin:0 0 8px;font-size:21px}
+.pasos p{margin:0;font-size:17px;color:var(--tinta-suave)}
+
+/* Repaso */
+.repaso{padding:48px 0 96px}
+.quiz{max-width:760px;background:var(--tinta);color:#fff;border-radius:24px;padding:34px 34px 30px}
+.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;font-size:16px;color:#D9D3C7}
+.barra-progreso{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,.15);overflow:hidden;max-width:220px}
+.barra-progreso i{display:block;height:100%;width:0;background:var(--amarillo);border-radius:999px;transition:width .5s var(--salida)}
+.quiz h3{margin:0 0 20px;font-family:var(--serif);font-weight:700;font-size:clamp(24px,2.6vw,30px);line-height:1.25}
+.opciones{display:grid;gap:10px}
+.opcion{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.22);color:#fff;border-radius:14px;padding:14px 16px;font-size:18px;font-weight:700;cursor:pointer;transition:background-color .2s ease,border-color .2s ease,transform .16s var(--salida)}
+.opcion:hover:not(:disabled){background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5)}
+.opcion:active:not(:disabled){transform:scale(.98)}
+.opcion .letra{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);font-size:16px}
+.opcion:disabled{cursor:default}
+.opcion.bien{background:var(--verde-claro);border-color:#7CC79A;color:var(--tinta)}
+.opcion.bien .letra{background:var(--verde);color:#fff}
+.opcion.mal{background:var(--rojo-claro);border-color:#E3A4A7;color:var(--tinta)}
+.opcion.mal .letra{background:var(--rojo);color:#fff}
+.explica{margin:18px 0 0;padding:16px 18px;border-radius:14px;background:rgba(253,216,47,.12);border:1px solid rgba(253,216,47,.4);font-size:17px;line-height:1.5;color:#F3EFE6;animation:aparecer .4s var(--salida) both}
+.explica a{color:var(--amarillo)}
+.quiz-pie{display:flex;justify-content:flex-end;margin-top:20px}
+.final .nota{font-family:var(--serif);font-weight:800;font-size:56px;line-height:1;margin:0 0 10px;color:var(--amarillo)}
+.final p{font-size:19px;color:#E9E4DA;margin:0 0 22px}
 
 /* Compartir */
 .compartir{background:var(--amarillo);padding:80px 0}
@@ -124,38 +203,54 @@ a{color:var(--azul)}
 .pie p{margin:0 0 10px;max-width:46em}
 .pie a{color:#fff}
 
-/* Ayuda */
+/* Barra fija en celular */
+.fija{position:fixed;left:12px;right:12px;bottom:12px;z-index:18;display:none;gap:8px;padding:8px;background:rgba(34,32,28,.96);border-radius:18px;box-shadow:0 12px 30px -10px rgba(0,0,0,.45);transform:translateY(140%);transition:transform .4s var(--salida)}
+.fija.visible{transform:none}
+.fija .btn{flex:1;min-height:50px;font-size:16px;padding:10px 12px}
+
+/* Ayuda y aviso */
 .ayuda{position:fixed;inset:0;background:rgba(20,18,15,.6);display:none;align-items:flex-end;justify-content:center;padding:16px;z-index:20}
 .ayuda.visible{display:flex}
-.ayuda .caja{background:#fff;border-radius:20px;padding:26px 24px 20px;max-width:520px;width:100%;font-size:18px}
+.ayuda .caja{background:#fff;border-radius:20px;padding:26px 24px 20px;max-width:520px;width:100%;font-size:18px;animation:subir .35s var(--salida) both}
+@keyframes subir{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
 .ayuda h3{font-family:var(--serif);font-size:26px;margin:0 0 12px}
 .ayuda ol{padding-left:22px;margin:0 0 18px}
 .ayuda li{margin:8px 0}
-.aviso{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--tinta);color:#fff;padding:14px 20px;border-radius:12px;font-size:17px;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;z-index:30;max-width:calc(100% - 32px)}
+.aviso{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:var(--tinta);color:#fff;padding:14px 20px;border-radius:12px;font-size:17px;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .3s var(--salida);z-index:30;max-width:calc(100% - 32px)}
 .aviso.visible{opacity:1;transform:translateX(-50%) translateY(0)}
 
 @media (max-width:860px){
   body{font-size:18px}
-  .portada-grid{grid-template-columns:1fr;gap:34px;padding-top:18px;padding-bottom:56px}
-  .documento{order:-1;width:min(250px,64vw)}
+  .portada-grid{grid-template-columns:1fr;gap:30px;padding-top:16px;padding-bottom:52px}
+  .documento{order:-1;width:min(240px,62vw)}
   .portada .entrada{font-size:19px}
-  .acciones .btn{flex:1 1 100%}
-  .palabras{padding-top:64px}
-  .palabras-intro{grid-template-columns:1fr;gap:28px;margin-bottom:40px}
-  .palabras-intro img{aspect-ratio:5/4;object-position:50% 20%}
-  .frase{padding:34px 0}
-  .frase .apoyo{font-size:20px}
+  .portada .acciones .btn{flex:1 1 100%}
+  .viaje,.ideas,.claves{padding:64px 0 72px}
+  .ruta{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:4px;margin:0 -24px 26px;padding:0 24px;scrollbar-width:none}
+  .ruta::-webkit-scrollbar{display:none}
+  .ruta::before{left:72px;right:auto;width:480px;top:30px}
+  .ruta li{flex:0 0 96px;scroll-snap-align:start}
+  .dia-btn .num{width:60px;height:60px;font-size:24px}
+  .mensajes{grid-template-columns:1fr}
+  .ideas-cabeza{grid-template-columns:1fr;gap:22px}
+  .ideas-cabeza img{width:100%;aspect-ratio:16/10;object-position:50% 22%}
+  .idea{flex-basis:88%;padding:26px 22px 20px}
+  .glosario{grid-template-columns:1fr}
   .despedida{display:block;min-height:0}
   .despedida img{position:relative;height:auto !important;aspect-ratio:4/3;object-position:58% 18%}
   .despedida::after{display:none}
   .despedida .envoltura{padding-top:30px;padding-bottom:44px}
-  .indice{padding:64px 0}
-  .dia{grid-template-columns:1fr;gap:10px}
+  .grupo{padding-top:64px}
+  .pasos{grid-template-columns:1fr}
+  .quiz{padding:26px 20px 22px;border-radius:20px}
   .compartir-grid{grid-template-columns:1fr}
+  .compartir .acciones .btn{flex:1 1 100%}
+  .fija.activa{display:flex}
+  .pie{padding-bottom:110px}
 }
+@media (min-width:861px) and (max-width:1060px){.glosario{grid-template-columns:repeat(2,1fr)}}
 @media (prefers-reduced-motion:reduce){
-  .documento img{animation:none}
-  .btn,.aviso{transition:none}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-delay:0s !important;transition-duration:.01ms !important}
 }
 </style>
 </head>
@@ -163,18 +258,18 @@ a{color:var(--azul)}
 
 <header class="portada">
   <div class="envoltura barra">
-    <a href="https://divinadataoficial.com" target="_top" aria-label="Divina Data"><img src="img/logo.png" alt="Divina Data" width="92" height="46"></a>
-    <a class="pdf-mini" href="#indice">Ver el índice</a>
+    <a href="https://divinadataoficial.com" target="_top" aria-label="Ir a Divina Data"><img src="img/logo.png" alt="Divina Data" width="92" height="46"></a>
   </div>
   <div class="envoltura portada-grid">
     <div>
+      <p class="lema">«Abramos el corazón»</p>
       <h1>Todo lo que el Papa León XIV nos dijo en el Perú</h1>
       <p class="entrada">Sus homilías, discursos y oraciones del viaje apostólico, del 11 al 16 de noviembre de 2026, reunidos en un solo documento para leer, rezar y compartir.</p>
       <p class="aviso-app" id="aviso-app"></p>
-      <div class="acciones">
+      <div class="acciones" id="acciones-portada">
         <a class="btn btn-tinta js-descargar" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" download>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-          Descargar el documento
+          Descargar el documento completo
         </a>
         <button class="btn btn-wa js-compartir" type="button">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.1.82.83-3-.2-.3a8.2 8.2 0 1 1 6.97 3.81Zm4.5-6.1c-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42h-.48a.92.92 0 0 0-.66.31 2.78 2.78 0 0 0-.87 2.07 4.83 4.83 0 0 0 1.01 2.56 11 11 0 0 0 4.24 3.74c1.58.68 2.2.74 2.99.62.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
@@ -184,84 +279,97 @@ a{color:var(--azul)}
       <p class="ficha">PDF gratuito de 69 páginas (630 KB). También puedes <a href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" target="_blank" rel="noopener">leerlo en línea</a>.</p>
     </div>
     <a class="documento" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" target="_blank" rel="noopener" aria-label="Abrir el documento León XIV en Perú">
-      <span class="lomo" aria-hidden="true"></span>
-      <img src="img/portada-documento.webp" alt="Portada del documento: León XIV en Perú. Todos los discursos y homilías que pronunció S.S. León XIV en su viaje apostólico a Perú, noviembre 2026." width="760" height="1075">
+      <span class="hoja"><span class="lomo" aria-hidden="true"></span><img src="img/portada-documento.webp" alt="Portada del documento: León XIV en Perú. Todos los discursos y homilías que pronunció S.S. León XIV en su viaje apostólico a Perú, noviembre 2026." width="760" height="1075"></span>
     </a>
   </div>
 </header>
 
+<nav class="secciones" aria-label="Secciones de la página">
+  <ul>
+    <li><a href="#viaje" data-ir="viaje">El viaje día por día</a></li>
+    <li><a href="#ideas" data-ir="ideas">6 ideas para la Iglesia</a></li>
+    <li><a href="#claves" data-ir="claves">Palabras clave</a></li>
+    <li><a href="#grupo" data-ir="grupo">Para tu grupo</a></li>
+    <li><a href="#repaso" data-ir="repaso">Repasa lo aprendido</a></li>
+  </ul>
+</nav>
+
 <main>
-  <section class="palabras" aria-labelledby="t-palabras">
+  <section class="viaje" id="viaje" aria-labelledby="t-viaje">
     <div class="envoltura">
-      <div class="palabras-intro">
-        <img src="img/papa-altar.webp" alt="El Papa León XIV saluda a los fieles desde el altar, con mitra y báculo." width="960" height="1200" >
-        <div>
-          <h2 id="t-palabras">¿Qué nos pidió el Papa como Iglesia?</h2>
-          <p>Seis frases del documento, con sus palabras exactas. Cada una indica dónde la dijo y en qué página puedes leer el mensaje completo.</p>
+      <div class="cabeza">
+        <h2 id="t-viaje">El viaje, día por día</h2>
+        <p>Toca un día para ver de qué habló el Papa en cada mensaje, con una frase suya y la página donde puedes leerlo completo.</p>
+      </div>
+      <ol class="ruta" role="tablist" aria-label="Días del viaje" id="ruta"></ol>
+      <div class="panel-dia" id="panel" role="tabpanel" tabindex="0"></div>
+    </div>
+  </section>
+
+  <section class="ideas" id="ideas" aria-labelledby="t-ideas">
+    <div class="envoltura">
+      <div class="ideas-cabeza">
+        <img src="img/papa-altar.webp" alt="El Papa León XIV saluda a los fieles desde el altar, con mitra y báculo." width="960" height="1200">
+        <div class="cabeza">
+          <h2 id="t-ideas">¿Qué nos pidió el Papa como Iglesia?</h2>
+          <p>Seis frases del documento, con sus palabras exactas. Desliza las tarjetas y abre «Para dialogar» si vas a compartirlas en grupo.</p>
         </div>
       </div>
+      <div class="pista" id="pista" tabindex="0" aria-label="Seis ideas del Papa sobre la Iglesia"></div>
+      <div class="controles">
+        <div class="puntos" id="puntos"></div>
+        <div class="flechas">
+          <button class="flecha" id="ant" type="button" aria-label="Idea anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          <span class="cuenta" id="cuenta" aria-live="polite">1 de 6</span>
+          <button class="flecha" id="sig" type="button" aria-label="Idea siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <ul class="frases">
-        <li class="frase">
-          <p class="tema">Una Iglesia que es hogar</p>
-          <blockquote>«…encuentren en la Iglesia un hogar donde sean recibidos, escuchados, amados y conducidos hacia Jesucristo.»</blockquote>
-          <p class="fuente">Encuentro con los obispos del Perú, Lima. <a class="pag" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf#page=14" target="_blank" rel="noopener">Página 14</a></p>
-        </li>
-        <li class="frase">
-          <p class="tema">La Iglesia es de Cristo</p>
-          <blockquote>«La Iglesia no nos pertenece; es de Cristo.»</blockquote>
-          <p class="fuente">Encuentro con los obispos del Perú, Lima. <a class="pag" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf#page=13" target="_blank" rel="noopener">Página 13</a></p>
-          <p class="apoyo">«No hay misión sin comunión.»</p>
-          <p class="fuente">Encuentro con consagrados y consejos pastorales, Chiclayo. <a class="pag" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf#page=35" target="_blank" rel="noopener">Página 35</a></p>
-        </li>
-        <li class="frase">
-          <p class="tema">Todos somos Iglesia</p>
-          <blockquote>«Antes de cualquier servicio, cargo, profesión o ministerio, somos bautizados.»</blockquote>
-          <p class="fuente">Encuentro con consagrados y consejos pastorales, Chiclayo. <a class="pag" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf#page=34" target="_blank" rel="noopener">Página 34</a></p>
-          <p class="apoyo">«La participación de los laicos no es una concesión, sino una expresión de su dignidad bautismal.»</p>
-        </li>
-        <li class="frase">
-          <p class="tema">Puentes, no muros</p>
-          <blockquote>«Perú lo necesita mucho, necesita una Iglesia que siembre amor, capaz de construir puentes en donde otros levantan muros.»</blockquote>
-          <p class="fuente">Hora Media en la Catedral de Lima. <a class="pag" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf#page=16" target="_blank" rel="noopener">Página 16</a></p>
-          <p class="apoyo">«Perú necesita más oasis fraternos y menos desiertos individualistas.»</p>
-          <p class="fuente">Casa de las Hermanitas de los Ancianos Desamparados, Callao. <a class="pag" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf#page=64" target="_blank" rel="noopener">Página 64</a></p>
-        </li>
-        <li class="frase">
-          <p class="tema">Evangelizar es dar testimonio</p>
-          <blockquote>«Evangelizar no es imponer doctrinas ni confiar en estructuras eficaces, sino dar testimonio de ese encuentro real con Jesucristo.»</blockquote>
-          <p class="fuente">Homilía en las Pampas de Pimentel, Chiclayo. <a class="pag" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf#page=30" target="_blank" rel="noopener">Página 30</a></p>
-        </li>
-        <li class="frase">
-          <p class="tema">A los jóvenes: «¿Qué buscas?»</p>
-          <blockquote>«Dios los ha creado capaces de realizar un bien que nadie más podrá hacer exactamente de la misma manera.»</blockquote>
-          <p class="fuente">Vigilia con los jóvenes, Estadio Nacional. <a class="pag" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf#page=24" target="_blank" rel="noopener">Página 24</a></p>
-          <p class="fuente">La oración que rezó con ellos:</p>
-          <span class="oracion">Jesús, en ti confío.</span>
-        </li>
-      </ul>
+  <section class="claves" id="claves" aria-labelledby="t-claves">
+    <div class="envoltura">
+      <div class="cabeza">
+        <h2 id="t-claves">Palabras clave del viaje</h2>
+        <p>Seis términos que el Papa usó varias veces. Toca cada uno para entender qué significa y dónde lo explica.</p>
+      </div>
+      <div class="glosario" id="glosario"></div>
     </div>
   </section>
 
   <section class="despedida" aria-labelledby="t-despedida">
-    <img src="img/papa-saludo.webp" alt="El Papa León XIV saluda a la multitud desde el papamóvil." width="1600" height="1568" >
+    <img src="img/papa-saludo.webp" alt="El Papa León XIV saluda a la multitud desde el papamóvil." width="1600" height="1568">
     <div class="envoltura">
       <blockquote id="t-despedida">«Mi viaje termina, pero ¡el tiempo de la misión continúa!»</blockquote>
       <p>Homilía en la Base Aérea Las Palmas, lunes 16 de noviembre</p>
       <div class="acciones">
-        <a class="btn btn-amarillo js-descargar" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" download>Descargar el documento</a>
+        <a class="btn btn-amarillo js-descargar" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" download>Descargar el documento completo</a>
         <button class="btn btn-claro js-compartir" type="button">Enviar por WhatsApp</button>
       </div>
     </div>
   </section>
 
-  <section class="indice" id="indice" aria-labelledby="t-indice">
+  <section class="grupo" id="grupo" aria-labelledby="t-grupo">
     <div class="envoltura">
-      <div class="indice-cabeza">
-        <h2 id="t-indice">Qué hay en el documento</h2>
-        <p>Todos los mensajes del viaje, en el orden en que los pronunció. Toca un mensaje para abrir el documento en esa página.</p>
+      <div class="cabeza">
+        <h2 id="t-grupo">Úsalo en tu parroquia o grupo</h2>
+        <p>Una forma sencilla de trabajar los mensajes en una reunión de una hora.</p>
       </div>
-      <ol class="dias" id="dias"></ol>
+      <ol class="pasos">
+        <li><h3>Lean un mensaje</h3><p>Elijan un día del viaje y lean juntos el mensaje completo en el documento. Cada tarjeta indica la página.</p></li>
+        <li><h3>Dialoguen</h3><p>Usen la pregunta «Para dialogar» de cada idea. Que cada uno comparta lo que le tocó el corazón.</p></li>
+        <li><h3>Comprométanse</h3><p>Terminen con un gesto concreto para la semana y recen juntos: «Jesús, en ti confío».</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="repaso" id="repaso" aria-labelledby="t-repaso">
+    <div class="envoltura">
+      <div class="cabeza">
+        <h2 id="t-repaso">Repasa lo aprendido</h2>
+        <p>Cinco preguntas sobre el viaje del Papa. Sirven para cerrar una catequesis o para jugar en familia.</p>
+      </div>
+      <div class="quiz" id="quiz" aria-live="polite"></div>
     </div>
   </section>
 
@@ -272,7 +380,7 @@ a{color:var(--azul)}
         <p>Imprímelo para tu grupo de oración, léelo en la catequesis o envíalo al grupo de WhatsApp de tu comunidad. Es gratuito.</p>
       </div>
       <div class="acciones">
-        <a class="btn btn-tinta js-descargar" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" download>Descargar el documento</a>
+        <a class="btn btn-tinta js-descargar" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" download>Descargar el documento completo</a>
         <button class="btn btn-borde js-compartir" type="button">Enviar por WhatsApp</button>
       </div>
     </div>
@@ -281,12 +389,17 @@ a{color:var(--azul)}
 
 <footer class="pie">
   <div class="envoltura">
-    <img src="img/logo-blanco.png" alt="Divina Data" width="104" height="52" >
+    <img src="img/logo-blanco.png" alt="Divina Data" width="104" height="52">
     <p>Divina Data comparte este documento para que las palabras del Papa lleguen a más fieles. No es una publicación oficial de la Santa Sede ni de la Conferencia Episcopal Peruana.</p>
-    <p>Textos de S.S. León XIV durante su viaje apostólico al Perú, del 11 al 16 de noviembre de 2026.</p>
+    <p>Textos de S.S. León XIV durante su viaje apostólico al Perú, del 11 al 16 de noviembre de 2026. Los resúmenes, las definiciones y las preguntas para dialogar son de Divina Data.</p>
     <p><a href="https://divinadataoficial.com" target="_top">divinadataoficial.com</a> &nbsp;|&nbsp; <a href="https://www.instagram.com/divina_data/" target="_blank" rel="noopener">@divina_data en Instagram</a></p>
   </div>
 </footer>
+
+<div class="fija" id="fija" aria-label="Acciones rápidas">
+  <a class="btn btn-amarillo js-descargar" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" download>Descargar PDF</a>
+  <button class="btn btn-wa js-compartir" type="button">WhatsApp</button>
+</div>
 
 <div class="ayuda" id="ayuda" role="dialog" aria-modal="true" aria-labelledby="ayuda-t">
   <div class="caja">
@@ -302,107 +415,269 @@ a{color:var(--azul)}
   var PDF="Leon-XIV-en-Peru-discursos-y-homilias.pdf";
   var URL_PAGINA="https://edercsep-a11y.github.io/ruta-las-palmas/";
   var MENSAJE="Todo lo que el Papa León XIV nos dijo en el Perú: sus homilías, discursos y oraciones, en un documento gratuito de 69 páginas. Descárgalo aquí:";
+  function $(s){return document.querySelector(s)}
+  function pag(n){return PDF+"#page="+n}
+  var EN_MARCO=false;try{EN_MARCO=window.self!==window.top}catch(e){EN_MARCO=true}
 
+  /* ---------- El viaje ---------- */
   var DIAS=[
-    {d:"Miércoles 11 de noviembre",c:"Lima",t:[
-      ["Encuentro con las autoridades, la sociedad civil y el cuerpo diplomático","Gran Teatro Nacional",4]]},
-    {d:"Jueves 12 de noviembre",c:"Lima",t:[
-      ["Encuentro con los obispos del Perú","Capilla del Palacio Arzobispal",10],
-      ["Hora Media con obispos, sacerdotes, religiosos, seminaristas y consejos pastorales","Catedral de Lima",15],
-      ["Encuentro sobre los desafíos y las esperanzas del pueblo peruano","Plaza Mayor",18],
-      ["Vigilia de oración con los jóvenes y los universitarios","Estadio Nacional",23]]},
-    {d:"Viernes 13 de noviembre",c:"Lima y Chiclayo",t:[
-      ["Saludo desde el balcón de la Nunciatura Apostólica","Lima",28],
-      ["Homilía de la Santa Misa","Pampas de Pimentel",29],
-      ["Saludo en la capilla San Óscar Romero","Chiclayo",32],
-      ["Encuentro con obispos, sacerdotes, religiosos, seminaristas y consejos pastorales","Santuario de Nuestra Señora de la Paz",34],
-      ["Encuentro con el mundo universitario","Universidad Católica Santo Toribio de Mogrovejo",37]]},
-    {d:"Sábado 14 de noviembre",c:"Chiclayo, Santa Cruz y Zaña",t:[
-      ["Coronación de la Virgen Inmaculada","Catedral de Chiclayo",42],
-      ["Santa Misa en Santa Cruz de Succhabamba","Cajamarca",44],
-      ["Clausura del Año Jubilar de Santo Toribio de Mogrovejo","Santuario de Santo Toribio, Zaña",48]]},
-    {d:"Domingo 15 de noviembre",c:"Cusco y Pucallpa",t:[
-      ["Encuentro con los fieles y la piedad popular","Saqsaywaman, Cusco",51],
-      ["Oración del Ángelus","Plaza de la Catedral, Cusco",55],
-      ["Encuentro con los misioneros y los pueblos amazónicos","Malecón Puerto Callao, Pucallpa",57],
-      ["Homilía de la Santa Misa","Villa Deportiva Regional, Pucallpa",60]]},
-    {d:"Lunes 16 de noviembre",c:"Callao y Lima",t:[
-      ["Visita a las Hermanitas de los Ancianos Desamparados","Callao",63],
-      ["Homilía de la Santa Misa","Base Aérea Las Palmas",66],
-      ["Agradecimiento al final del viaje","Base Aérea Las Palmas",69]]}
+    {n:"11",dn:"Miércoles",c:"Lima",m:[
+      {t:"Encuentro con las autoridades, la sociedad civil y el cuerpo diplomático",l:"Gran Teatro Nacional, Lima",p:4,
+       r:"Vuelve al Perú como a su patria. Pide a las autoridades escuchar a quienes viven lejos, cuidar a las familias, a los enfermos y a la naturaleza, y propone la Doctrina Social de la Iglesia.",
+       f:"Amar a un pueblo es desear que todos puedan vivir dignamente en él."}]},
+    {n:"12",dn:"Jueves",c:"Lima",m:[
+      {t:"Encuentro con los obispos del Perú",l:"Capilla del Palacio Arzobispal, Lima",p:10,
+       r:"Usa el Camino del Inca como imagen de la misión: caminar con el pueblo, en comunión entre obispos y siguiendo el ejemplo de santo Toribio. Cierra con tres invitaciones.",
+       f:"No dejen de caminar con este pueblo."},
+      {t:"Hora Media con obispos, sacerdotes, religiosos, seminaristas y consejos pastorales",l:"Catedral de Lima",p:15,
+       r:"Propone actitudes para ser Iglesia: poner a Cristo como fundamento, buscar la reconciliación, ser artesanos de paz y vivir la misión, cada uno según su vocación.",
+       f:"La paz inicia siempre “aquí y ahora”."},
+      {t:"Encuentro sobre los desafíos y las esperanzas del pueblo peruano",l:"Plaza Mayor, Lima",p:18,
+       r:"Habla de la familia, el trabajo y la empresa, la diversidad cultural y la dignidad de la mujer, con la dignidad humana en el centro de todo.",
+       f:"¡Valoremos a las mujeres! ¡Protejamos y respetemos a las niñas!"},
+      {t:"Vigilia de oración con los jóvenes y los universitarios",l:"Estadio Nacional, Lima",p:23,
+       r:"A partir de la pregunta de Jesús a sus primeros discípulos, habla a los jóvenes de pasión, vocación y amistad con Cristo, y reza con ellos.",
+       f:"¿Qué buscas? ¿Qué deseas encontrar? ¿Qué esperas de la vida?"}]},
+    {n:"13",dn:"Viernes",c:"Lima y Chiclayo",m:[
+      {t:"Saludo desde el balcón de la Nunciatura Apostólica",l:"Lima",p:28,
+       r:"Un breve saludo antes de viajar a Chiclayo: agradece las bendiciones de esos días y da su bendición.",
+       f:"Queremos continuar con ese mismo espíritu, de alegría."},
+      {t:"Homilía de la Santa Misa",l:"Pampas de Pimentel, Chiclayo",p:29,
+       r:"Todo bautizado es discípulo misionero. Evangelizar es dar testimonio de vida, unir la caridad con la verdad y rezar juntos en las familias.",
+       f:"El mundo nos espera y la misión está en sus inicios."},
+      {t:"Saludo en la capilla San Óscar Romero",l:"Chiclayo",p:32,
+       r:"Una visita breve: agradece las oraciones por su salud y llama a todos a continuar juntos la misión de la Iglesia.",
+       f:"Compartir esta gran noticia de que Jesús camina siempre con nosotros."},
+      {t:"Encuentro con obispos, sacerdotes, religiosos, seminaristas y consejos pastorales",l:"Santuario de Nuestra Señora de la Paz, Chiclayo",p:34,
+       r:"Explica la sinodalidad como caminar juntos. Recuerda que antes de cualquier cargo somos bautizados y pide que cada comunidad tenga su consejo pastoral.",
+       f:"No hay misión sin comunión."},
+      {t:"Encuentro con el mundo universitario",l:"Universidad Católica Santo Toribio de Mogrovejo, Chiclayo",p:37,
+       r:"Presenta la universidad como lugar de verdad y de servicio. Pide sentido crítico ante la tecnología y valora el límite humano frente a las promesas del transhumanismo.",
+       f:"La ciencia sin conciencia arruina la vida de todos."}]},
+    {n:"14",dn:"Sábado",c:"Chiclayo, Santa Cruz y Zaña",m:[
+      {t:"Coronación de la Virgen Inmaculada",l:"Catedral de Chiclayo",p:42,
+       r:"Corona a la Virgen Inmaculada, protectora de Chiclayo, le confía su ministerio como Papa y reza con el pueblo una oración a María.",
+       f:"Junto a ti aprendí a ser pastor de Chiclayo."},
+      {t:"Santa Misa en Santa Cruz de Succhabamba",l:"Cajamarca",p:44,
+       r:"Agradece a los misioneros y a los catequistas de los Andes. Con la parábola de la viuda, pide orar sin desanimarse y buscar la justicia sin violencia.",
+       f:"Donde hay fe, hay oración, y donde hay oración, hay capacidad de compromiso por los demás."},
+      {t:"Clausura del Año Jubilar de Santo Toribio de Mogrovejo",l:"Santuario de Santo Toribio, Zaña",p:48,
+       r:"Recuerda su primera noche como obispo de Chiclayo, saluda a los afrodescendientes y acompaña a las familias que sufren por la inseguridad.",
+       f:"Nunca se acostumbren al sufrimiento de los demás."}]},
+    {n:"15",dn:"Domingo",c:"Cusco y Pucallpa",m:[
+      {t:"Encuentro con los fieles y la piedad popular",l:"Saqsaywaman, Cusco",p:51,
+       r:"La piedad popular es un camino de encuentro con Dios. Pide que las fiestas sean escuela de fraternidad y que los jóvenes participen en ellas.",
+       f:"La fe no separa, sino que une a Dios y a los demás."},
+      {t:"Oración del Ángelus",l:"Plaza de la Catedral, Cusco",p:55,
+       r:"Con la parábola de los talentos habla a los enfermos y a los consagrados, y ofrece un sudario para la imagen del Señor de los Temblores.",
+       f:"Ustedes están en el corazón palpitante de la Iglesia."},
+      {t:"Encuentro con los misioneros y los pueblos amazónicos",l:"Malecón Puerto Callao, Pucallpa",p:57,
+       r:"Denuncia la explotación de la Amazonía y la violencia contra líderes indígenas y mujeres, y defiende la ecología integral.",
+       f:"¡Cristo nunca nos abandona! ¡Cristo está con ustedes!"},
+      {t:"Homilía de la Santa Misa",l:"Villa Deportiva Regional, Pucallpa",p:60,
+       r:"La parábola de los talentos invita a pasar del miedo a la confianza en Dios. Pide cultivar la fe, la humanidad y la alegría.",
+       f:"La violencia contra el pueblo es una violencia contra la tierra."}]},
+    {n:"16",dn:"Lunes",c:"Callao y Lima",m:[
+      {t:"Visita a las Hermanitas de los Ancianos Desamparados",l:"Callao",p:63,
+       r:"Llama a la casa de ancianos un «oasis de dignidad» y pide unir la fe con las obras, cuidando a los más frágiles.",
+       f:"Seguir a Cristo vale la pena."},
+      {t:"Homilía de la Santa Misa",l:"Base Aérea Las Palmas, Lima",p:66,
+       r:"A 300 años de su canonización, presenta a santo Toribio como modelo de pastor misionero y cercano a los pobres, y envía a todos a la misión.",
+       f:"¡El pueblo peruano también es mi pueblo!"},
+      {t:"Agradecimiento al final del viaje",l:"Base Aérea Las Palmas, Lima",p:69,
+       r:"Agradece a todos los que hicieron posible el viaje y se lleva la alegría de los jóvenes y la ternura de los abuelos.",
+       f:"¡Que Dios te bendiga mi Perú! ¡Que María te cubra con su manto!"}]}
   ];
-  var ol=document.getElementById("dias"),html="";
-  DIAS.forEach(function(x){
-    html+='<li class="dia"><h3>'+x.d+'<span>'+x.c+'</span></h3><ul class="textos">';
-    x.t.forEach(function(m){
-      html+='<li><a href="'+PDF+'#page='+m[2]+'" target="_blank" rel="noopener"><span class="t">'+m[0]+'<span class="l">'+m[1]+'</span></span><span class="p">Página '+m[2]+'</span></a></li>';
-    });
-    html+='</ul></li>';
+  var ruta=$("#ruta"),panel=$("#panel"),hR="";
+  DIAS.forEach(function(d,i){
+    hR+='<li role="presentation"><button class="dia-btn" role="tab" id="tab'+i+'" aria-controls="panel" aria-selected="'+(i===0)+'" tabindex="'+(i===0?0:-1)+'"><span class="num">'+d.n+'</span><span class="dn">'+d.dn+'</span><span class="ciudad">'+d.c+'</span></button></li>';
   });
-  ol.innerHTML=html;
+  ruta.innerHTML=hR;
+  var tabs=[].slice.call(ruta.querySelectorAll(".dia-btn"));
+  function mostrarDia(i,foco){
+    tabs.forEach(function(t,k){t.setAttribute("aria-selected",k===i);t.tabIndex=k===i?0:-1});
+    var d=DIAS[i];panel.setAttribute("aria-labelledby","tab"+i);
+    var h='<div class="panel-cabeza"><h3>'+d.dn+' '+d.n+' de noviembre</h3><span>'+d.c+', '+d.m.length+(d.m.length===1?' mensaje':' mensajes')+'</span></div><div class="mensajes">';
+    d.m.forEach(function(m){
+      h+='<article class="mensaje'+(d.m.length===1?' unico':'')+'"><p class="lugar">'+m.l+'</p><h4>'+m.t+'</h4><p class="resumen">'+m.r+'</p><blockquote>«'+m.f+'»</blockquote><a class="leer" href="'+pag(m.p)+'" target="_blank" rel="noopener">Leer completo en la página '+m.p+'</a></article>';
+    });
+    panel.innerHTML=h+'</div>';
+    if(foco){tabs[i].focus();tabs[i].scrollIntoView({block:"nearest",inline:"center"})}
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener("click",function(){mostrarDia(i,false)});
+    t.addEventListener("keydown",function(e){
+      var k=e.key,n=null;
+      if(k==="ArrowRight")n=(i+1)%tabs.length;else if(k==="ArrowLeft")n=(i-1+tabs.length)%tabs.length;else if(k==="Home")n=0;else if(k==="End")n=tabs.length-1;
+      if(n!==null){e.preventDefault();mostrarDia(n,true)}
+    });
+  });
+  mostrarDia(0,false);
 
+  /* ---------- Ideas ---------- */
+  var IDEAS=[
+    {tema:"Una Iglesia que es hogar",q:"…encuentren en la Iglesia un hogar donde sean recibidos, escuchados, amados y conducidos hacia Jesucristo.",f:"Encuentro con los obispos del Perú, Lima",p:14,
+     d:"¿Quién de tu barrio o de tu familia no se siente recibido en la Iglesia? ¿Qué podrías hacer esta semana para acercarte a esa persona?"},
+    {tema:"La Iglesia es de Cristo",q:"La Iglesia no nos pertenece; es de Cristo.",f:"Encuentro con los obispos del Perú, Lima",p:13,
+     a:"«No hay misión sin comunión.»",af:"Encuentro con consagrados y consejos pastorales, Chiclayo",ap:35,
+     d:"¿Qué cambia en tu manera de servir si recuerdas que la Iglesia no es tuya, sino de Cristo?"},
+    {tema:"Todos somos Iglesia",q:"Antes de cualquier servicio, cargo, profesión o ministerio, somos bautizados.",f:"Encuentro con consagrados y consejos pastorales, Chiclayo",p:34,
+     a:"«La participación de los laicos no es una concesión, sino una expresión de su dignidad bautismal.»",af:"Mismo encuentro",ap:35,
+     d:"¿Qué don tuyo podrías poner al servicio de tu parroquia este mes?"},
+    {tema:"Puentes, no muros",q:"Perú lo necesita mucho, necesita una Iglesia que siembre amor, capaz de construir puentes en donde otros levantan muros.",f:"Hora Media en la Catedral de Lima",p:16,
+     a:"«Perú necesita más oasis fraternos y menos desiertos individualistas.»",af:"Hermanitas de los Ancianos Desamparados, Callao",ap:64,
+     d:"¿Con quién necesitas construir un puente en tu familia o en tu comunidad? ¿Cuál sería el primer paso?"},
+    {tema:"Evangelizar es dar testimonio",q:"Evangelizar no es imponer doctrinas ni confiar en estructuras eficaces, sino dar testimonio de ese encuentro real con Jesucristo.",f:"Homilía en las Pampas de Pimentel, Chiclayo",p:30,
+     d:"¿Qué actitud tuya muestra a los demás que conoces a Jesús? ¿Qué te gustaría cambiar?"},
+    {tema:"A los jóvenes: «¿Qué buscas?»",q:"Dios los ha creado capaces de realizar un bien que nadie más podrá hacer exactamente de la misma manera.",f:"Vigilia con los jóvenes, Estadio Nacional",p:24,
+     a:"«Jesús, en ti confío.»",af:"La oración que rezó con ellos",ap:26,
+     d:"Responde en silencio la pregunta de Jesús: ¿qué buscas? Luego comparte una respuesta con el grupo."}
+  ];
+  var pista=$("#pista"),puntos=$("#puntos"),hI="",hP="";
+  IDEAS.forEach(function(x,i){
+    hI+='<article class="idea" aria-label="Idea '+(i+1)+' de '+IDEAS.length+'">'+
+      '<p class="tema"><b>'+(i+1)+'</b>'+x.tema+'</p>'+
+      '<blockquote>«'+x.q+'»</blockquote>'+
+      '<p class="fuente">'+x.f+'. <a href="'+pag(x.p)+'" target="_blank" rel="noopener">Página '+x.p+'</a></p>'+
+      (x.a?'<p class="apoyo">'+x.a+'</p><p class="fuente">'+x.af+'. <a href="'+pag(x.ap)+'" target="_blank" rel="noopener">Página '+x.ap+'</a></p>':'')+
+      '<details class="dialogar"><summary>Para dialogar <span class="mas" aria-hidden="true">+</span></summary><p>'+x.d+'</p></details>'+
+    '</article>';
+    hP+='<button type="button" aria-label="Ir a la idea '+(i+1)+'"></button>';
+  });
+  pista.innerHTML=hI;puntos.innerHTML=hP;
+  var tarjetas=[].slice.call(pista.children),bp=[].slice.call(puntos.children),actual=0;
+  function base(){return tarjetas[0].offsetLeft}
+  function irA(i){i=Math.max(0,Math.min(tarjetas.length-1,i));pista.scrollTo({left:tarjetas[i].offsetLeft-base(),behavior:"smooth"})}
+  function marcar(i){
+    actual=i;bp.forEach(function(b,k){b.setAttribute("aria-current",k===i)});
+    $("#cuenta").textContent=(i+1)+" de "+tarjetas.length;
+    $("#ant").disabled=i===0;$("#sig").disabled=i===tarjetas.length-1;
+  }
+  function calcular(){
+    var x=pista.scrollLeft,mejor=0,dist=1e9;
+    tarjetas.forEach(function(t,k){var d=Math.abs(t.offsetLeft-base()-x);if(d<dist){dist=d;mejor=k}});
+    if(pista.scrollLeft+pista.clientWidth>=pista.scrollWidth-4)mejor=tarjetas.length-1;
+    marcar(mejor);
+  }
+  var rq;pista.addEventListener("scroll",function(){cancelAnimationFrame(rq);rq=requestAnimationFrame(calcular)},{passive:true});
+  $("#ant").onclick=function(){irA(actual-1)};$("#sig").onclick=function(){irA(actual+1)};
+  bp.forEach(function(b,i){b.onclick=function(){irA(i)}});
+  pista.addEventListener("keydown",function(e){if(e.target!==pista)return;if(e.key==="ArrowRight"){e.preventDefault();irA(actual+1)}if(e.key==="ArrowLeft"){e.preventDefault();irA(actual-1)}});
+  marcar(0);
+
+  /* ---------- Palabras clave ---------- */
+  var CLAVES=[
+    {t:"Sinodalidad",d:"El Papa la explica como «caminar juntos, escuchar, discernir y participar corresponsablemente en la misión». Pide que cada comunidad tenga su consejo pastoral.",p:34},
+    {t:"Discípulo misionero",d:"Todo bautizado, sea ministro ordenado o laico, está llamado a anunciar el Evangelio, sin importar su función en la Iglesia. Se anuncia sobre todo con el testimonio de vida.",p:29},
+    {t:"Piedad popular",d:"Las fiestas, procesiones y peregrinaciones donde la fe se expresa con la música, la danza y las imágenes de cada pueblo. El Papa pide que sean «escuela de fraternidad y caridad».",p:53},
+    {t:"Ecología integral",d:"No se puede separar el cuidado de la Amazonía de la preocupación por los pueblos que la habitan: la justicia social, el cuidado de la creación y la vida espiritual van de la mano.",p:57},
+    {t:"Doctrina Social de la Iglesia",d:"Pone en el centro a la persona humana y su dignidad. De ahí nacen otros principios como el bien común, la solidaridad y la subsidiariedad.",p:18},
+    {t:"Santo Toribio de Mogrovejo",d:"Segundo arzobispo de Lima. Recorrió el país a pie, aprendió las lenguas de los pueblos y defendió a los indígenas. En 2026 se cumplieron 300 años de su canonización.",p:66}
+  ];
+  var hC="";
+  CLAVES.forEach(function(c){hC+='<details class="termino"><summary>'+c.t+' <span class="mas" aria-hidden="true">+</span></summary><div class="def"><p>'+c.d+'</p><a href="'+pag(c.p)+'" target="_blank" rel="noopener">Léelo en la página '+c.p+'</a></div></details>'});
+  $("#glosario").innerHTML=hC;
+
+  /* ---------- Repaso ---------- */
+  var PREG=[
+    {q:"¿Cuál fue el lema de la visita del Papa al Perú?",o:["«Abramos el corazón»","«Caminemos juntos»","«Somos Iglesia»"],b:0,
+     e:"El Papa lo recordó a los obispos: «¡Abramos el corazón!», una invitación a la conversión, la comunión y la misión.",p:10},
+    {q:"¿Con qué imagen explicó el Papa la misión de los obispos?",o:["El río Amazonas","El Camino del Inca","Los Andes nevados"],b:1,
+     e:"Comparó a la Iglesia con el Camino del Inca y al obispo con los chasquis, mensajeros que llevan la Buena Nueva.",p:10},
+    {q:"¿Qué oración repitió con los jóvenes en el Estadio Nacional?",o:["Padre nuestro","Ave María","«Jesús, en ti confío»"],b:2,
+     e:"Les pidió repetir con él tres veces: «Jesús, en ti confío», y luego: «¡Ven, Señor Jesús!».",p:26},
+    {q:"¿Qué ofreció el Papa al Señor de los Temblores en el Cusco?",o:["Un sudario","Una corona","La Rosa de Oro"],b:0,
+     e:"Ofreció un sudario para la imagen, como «la caricia del Papa» para el pueblo cusqueño. La corona fue para la Virgen Inmaculada en Chiclayo y la Rosa de Oro, para la Virgen en Saqsaywaman.",p:56},
+    {q:"¿A qué santo recordó en la Misa de Las Palmas, a 300 años de su canonización?",o:["San Martín de Porres","Santo Toribio de Mogrovejo","Santa Rosa de Lima"],b:1,
+     e:"Presentó a santo Toribio de Mogrovejo, segundo arzobispo de Lima, como modelo de pastor misionero y cercano a los pobres.",p:66}
+  ];
+  var quiz=$("#quiz"),iq=0,aciertos=0;
+  function pintarPregunta(){
+    var P=PREG[iq],L=["A","B","C"];
+    var h='<div class="quiz-top"><span>Pregunta '+(iq+1)+' de '+PREG.length+'</span><span class="barra-progreso" aria-hidden="true"><i style="width:'+(iq/PREG.length*100)+'%"></i></span></div><h3>'+P.q+'</h3><div class="opciones">';
+    P.o.forEach(function(o,k){h+='<button class="opcion" type="button" data-k="'+k+'"><span class="letra">'+L[k]+'</span>'+o+'</button>'});
+    quiz.innerHTML=h+'</div>';
+    [].forEach.call(quiz.querySelectorAll(".opcion"),function(b){b.onclick=function(){responder(+b.getAttribute("data-k"))}});
+  }
+  function responder(k){
+    var P=PREG[iq];
+    [].forEach.call(quiz.querySelectorAll(".opcion"),function(b,j){b.disabled=true;if(j===P.b)b.classList.add("bien");else if(j===k)b.classList.add("mal")});
+    var ok=k===P.b;if(ok)aciertos++;
+    quiz.querySelector(".barra-progreso i").style.width=((iq+1)/PREG.length*100)+"%";
+    var d=document.createElement("div");
+    d.innerHTML='<p class="explica"><b>'+(ok?"¡Correcto! ":"La respuesta es: "+P.o[P.b]+". ")+'</b>'+P.e+' <a href="'+pag(P.p)+'" target="_blank" rel="noopener">Página '+P.p+'</a></p><div class="quiz-pie"><button class="btn btn-amarillo" type="button" id="seguir">'+(iq<PREG.length-1?"Siguiente pregunta":"Ver mi resultado")+'</button></div>';
+    quiz.appendChild(d);var s=$("#seguir");s.focus({preventScroll:true});
+    s.onclick=function(){iq++;if(iq<PREG.length)pintarPregunta();else final()};
+  }
+  function final(){
+    var msg=aciertos===PREG.length?"¡Excelente! Conoces muy bien el viaje del Papa.":aciertos>=3?"¡Muy bien! Repasa en el documento lo que te faltó.":"Buen comienzo. Lee el documento y vuelve a intentarlo.";
+    quiz.innerHTML='<div class="final"><p class="nota">'+aciertos+' de '+PREG.length+'</p><p>'+msg+'</p><div class="acciones"><button class="btn btn-amarillo" type="button" id="otra">Volver a empezar</button><a class="btn btn-claro js-descargar" href="'+PDF+'" download>Descargar el documento completo</a></div></div>';
+    $("#otra").onclick=function(){iq=0;aciertos=0;pintarPregunta()};
+    enlazarDescargas();
+  }
+  pintarPregunta();
+
+  /* ---------- Navegación ---------- */
+  var navs=[].slice.call(document.querySelectorAll(".secciones a"));
+  navs.forEach(function(a){a.addEventListener("click",function(e){var el=document.getElementById(a.getAttribute("data-ir"));if(el){e.preventDefault();el.scrollIntoView({behavior:"smooth",block:"start"})}})});
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){navs.forEach(function(a){a.setAttribute("aria-current",a.getAttribute("data-ir")===en.target.id)})}})},{rootMargin:"-40% 0px -55% 0px"});
+    ["viaje","ideas","claves","grupo","repaso"].forEach(function(id){io.observe(document.getElementById(id))});
+    if(!EN_MARCO){
+      var fija=$("#fija");fija.classList.add("activa");
+      new IntersectionObserver(function(es){fija.classList.toggle("visible",!es[0].isIntersecting)}).observe($("#acciones-portada"));
+    }
+  }
+
+  /* ---------- Descargar y compartir ---------- */
   var UA=navigator.userAgent||"";
   var APP=/Instagram/i.test(UA)?"Instagram":/FBAN|FBAV|FB_IAB|FBIOS|Messenger/i.test(UA)?"Facebook":/TikTok|musical_ly|Bytedance/i.test(UA)?"TikTok":"";
-  var aviso=document.getElementById("aviso"),t0;
+  var aviso=$("#aviso"),t0;
   function avisar(txt){aviso.textContent=txt;aviso.classList.add("visible");clearTimeout(t0);t0=setTimeout(function(){aviso.classList.remove("visible")},3200)}
-
-  if(APP){
-    var a=document.getElementById("aviso-app");
-    a.innerHTML="<b>Estás dentro de "+APP+".</b> Para descargar el documento, toca los tres puntos ⋯ de arriba y elige <b>Abrir en el navegador</b>.";
-    a.classList.add("visible");
-  }
-
-  var ayuda=document.getElementById("ayuda");
+  if(APP){var a=$("#aviso-app");a.innerHTML="<b>Estás dentro de "+APP+".</b> Para descargar el documento, toca los tres puntos ⋯ de arriba y elige <b>Abrir en el navegador</b>.";a.classList.add("visible")}
+  var ayuda=$("#ayuda");
   function mostrarAyuda(){
-    document.getElementById("ayuda-pasos").innerHTML=APP
-      ?"<li>Toca los <b>tres puntos ⋯</b> arriba a la derecha.</li><li>Elige <b>Abrir en el navegador</b> (Chrome o Safari).</li><li>Ahí toca <b>Descargar el documento</b>.</li>"
-      :"<li>Toca <b>Descargar el documento</b>.</li><li>Abre WhatsApp y entra al chat o grupo.</li><li>Toca el <b>clip 📎</b>, elige <b>Documento</b> y busca el archivo en tus descargas.</li>";
-    ayuda.classList.add("visible");document.getElementById("ayuda-cerrar").focus();
+    $("#ayuda-pasos").innerHTML=APP
+      ?"<li>Toca los <b>tres puntos ⋯</b> arriba a la derecha.</li><li>Elige <b>Abrir en el navegador</b> (Chrome o Safari).</li><li>Ahí toca <b>Descargar el documento completo</b>.</li>"
+      :"<li>Toca <b>Descargar el documento completo</b>.</li><li>Abre WhatsApp y entra al chat o grupo.</li><li>Toca el <b>clip 📎</b>, elige <b>Documento</b> y busca el archivo en tus descargas.</li>";
+    ayuda.classList.add("visible");$("#ayuda-cerrar").focus();
   }
-  document.getElementById("ayuda-cerrar").onclick=function(){ayuda.classList.remove("visible")};
+  $("#ayuda-cerrar").onclick=function(){ayuda.classList.remove("visible")};
   ayuda.addEventListener("click",function(e){if(e.target===ayuda)ayuda.classList.remove("visible")});
   document.addEventListener("keydown",function(e){if(e.key==="Escape")ayuda.classList.remove("visible")});
-
-  [].forEach.call(document.querySelectorAll(".js-descargar"),function(b){
-    b.addEventListener("click",function(e){
-      if(APP){e.preventDefault();mostrarAyuda();return}
-      avisar("Descargando… lo encontrarás en tus Descargas");
+  function enlazarDescargas(){
+    [].forEach.call(document.querySelectorAll(".js-descargar"),function(b){
+      if(b._ok)return;b._ok=1;
+      b.addEventListener("click",function(e){if(APP){e.preventDefault();mostrarAyuda();return}avisar("Descargando… lo encontrarás en tus Descargas")});
     });
-  });
-
+  }
+  enlazarDescargas();
   var archivo=null;
   function prepararArchivo(){
-    if(archivo||!navigator.canShare||!window.fetch)return Promise.resolve(archivo);
-    return fetch(PDF).then(function(r){return r.blob()}).then(function(b){
-      var f=new File([b],PDF,{type:"application/pdf"});
-      if(navigator.canShare({files:[f]}))archivo=f;
-      return archivo;
-    }).catch(function(){return null});
+    if(archivo||!navigator.canShare||!window.fetch)return;
+    fetch(PDF).then(function(r){return r.blob()}).then(function(b){var f=new File([b],PDF,{type:"application/pdf"});if(navigator.canShare({files:[f]}))archivo=f}).catch(function(){});
   }
-  if(navigator.canShare&&!APP){setTimeout(prepararArchivo,1500)}
-
+  if(navigator.canShare&&!APP)setTimeout(prepararArchivo,1500);
   function enviarEnlace(){
-    var u="https://wa.me/?text="+encodeURIComponent(MENSAJE+" "+URL_PAGINA);
-    var w=null;try{w=window.open(u,"_blank","noopener")}catch(e){}
+    var u="https://wa.me/?text="+encodeURIComponent(MENSAJE+" "+URL_PAGINA),w=null;
+    try{w=window.open(u,"_blank","noopener")}catch(e){}
     if(!w){try{window.top.location.href=u}catch(e){location.href=u}}
   }
   [].forEach.call(document.querySelectorAll(".js-compartir"),function(b){
     b.addEventListener("click",function(){
-      if(archivo){
-        navigator.share({files:[archivo],title:"León XIV en el Perú",text:MENSAJE+" "+URL_PAGINA})
-          .catch(function(e){if(!e||e.name!=="AbortError")enviarEnlace()});
-        return;
-      }
+      if(archivo){navigator.share({files:[archivo],title:"León XIV en el Perú",text:MENSAJE+" "+URL_PAGINA}).catch(function(e){if(!e||e.name!=="AbortError")enviarEnlace()});return}
       enviarEnlace();
     });
   });
+
+  /* ---------- Altura para la web que la inserta ---------- */
   function enviarAltura(){
-    if(window.parent===window)return;
+    if(!EN_MARCO)return;
     try{window.parent.postMessage({tipo:"divina-altura",alto:document.documentElement.scrollHeight},"*")}catch(e){}
   }
   window.addEventListener("load",enviarAltura);
   window.addEventListener("resize",enviarAltura);
-  if(window.ResizeObserver){new ResizeObserver(enviarAltura).observe(document.body)}
+  if(window.ResizeObserver)new ResizeObserver(enviarAltura).observe(document.body);
   enviarAltura();
 })();
 </script>
