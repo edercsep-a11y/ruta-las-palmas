@@ -85,6 +85,16 @@ button{font:inherit;color:inherit}
 .reproducir:hover .boton{transform:scale(1.04)}
 .reproducir:active .boton{transform:scale(.97)}
 
+.musica{position:fixed;left:16px;bottom:16px;z-index:19;display:none;align-items:center;gap:10px;background:var(--tinta);color:#fff;border:0;border-radius:999px;padding:10px 16px 10px 12px;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 10px 26px -10px rgba(0,0,0,.5);transition:transform .16s var(--salida)}
+.musica.visible{display:inline-flex;animation:subir .35s var(--salida) both}
+.musica:active{transform:scale(.96)}
+.musica .ondas{display:inline-flex;align-items:flex-end;gap:2px;height:16px}
+.musica .ondas i{width:3px;background:var(--amarillo);border-radius:2px;animation:onda 1s ease-in-out infinite}
+.musica .ondas i:nth-child(2){animation-delay:.2s}.musica .ondas i:nth-child(3){animation-delay:.4s}
+.musica.pausa .ondas i{animation:none;height:5px}
+@keyframes onda{0%,100%{height:5px}50%{height:16px}}
+.nota-musica{margin:10px 0 0;font-size:15px;color:var(--tinta-suave)}
+
 /* Navegación de secciones */
 .secciones{position:sticky;top:0;z-index:15;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--linea)}
 .secciones ul{list-style:none;margin:0 auto;padding:10px 24px;max-width:var(--ancho);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
@@ -264,6 +274,7 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
   .compartir-grid{grid-template-columns:1fr}
   .compartir .acciones .btn{flex:1 1 100%}
   .fija.activa{display:flex}
+  .musica{bottom:84px}
   .pie{padding-bottom:110px}
 }
 @media (min-width:861px) and (max-width:1060px){.glosario{grid-template-columns:repeat(2,1fr)}}
@@ -295,6 +306,7 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
         </button>
       </div>
       <p class="ficha">PDF gratuito de 69 páginas (630 KB). También puedes <a href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" target="_blank" rel="noopener">leerlo en línea</a>.</p>
+      <p class="nota-musica">♪ Al tocar la página empezará a sonar el himno de la visita, «León, hermano del camino».</p>
     </div>
     <a class="documento" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" target="_blank" rel="noopener" aria-label="Abrir el documento León XIV en Perú">
       <span class="hoja"><span class="lomo" aria-hidden="true"></span><img src="img/portada-documento.webp" alt="Portada del documento: León XIV en Perú. Todos los discursos y homilías que pronunció S.S. León XIV en su viaje apostólico a Perú, noviembre 2026." width="760" height="1075"></span>
@@ -317,7 +329,7 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
     <div class="envoltura himno-grid">
       <div>
         <h2 id="t-himno">Escucha el himno de la visita mientras lees</h2>
-        <p>«León, hermano del camino» fue la canción oficial del viaje del Papa al Perú. Esta versión trae la letra en pantalla para cantarla. Dale play y sigue recorriendo la página: la música seguirá sonando.</p>
+        <p>«León, hermano del camino» fue la canción oficial del viaje del Papa al Perú. Esta versión trae la letra en pantalla para cantarla. Empieza a sonar con tu primer toque en la página y sigue mientras lees. Puedes pausarlo cuando quieras.</p>
         <p class="creditos">Música y letra: Jaime Montoya. Interpreta: coro Aguchita. Versión con letra del Arzobispado de Lima. <a href="https://www.youtube.com/watch?v=HiJA-dV4gy0" target="_blank" rel="noopener">Verlo en YouTube</a></p>
       </div>
       <div class="video" id="video">
@@ -428,6 +440,8 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
     <p><a href="https://divinadataoficial.com" target="_top">divinadataoficial.com</a> &nbsp;|&nbsp; <a href="https://www.instagram.com/divina_data/" target="_blank" rel="noopener">@divina_data en Instagram</a></p>
   </div>
 </footer>
+
+<button class="musica" id="musica" type="button" aria-pressed="false"><span class="ondas" aria-hidden="true"><i></i><i></i><i></i></span><span id="musica-txt">Pausar el himno</span></button>
 
 <div class="fija" id="fija" aria-label="Acciones rápidas">
   <a class="btn btn-amarillo js-descargar" href="Leon-XIV-en-Peru-discursos-y-homilias.pdf" download>Descargar PDF</a>
@@ -651,14 +665,33 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
   pintarPregunta();
 
   /* ---------- Himno ---------- */
-  $("#reproducir").addEventListener("click",function(){
-    var f=document.createElement("iframe");
-    f.src="https://www.youtube-nocookie.com/embed/HiJA-dV4gy0?autoplay=1&rel=0&playsinline=1";
-    f.title="León, hermano del camino: versión con letra";
-    f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";
-    f.allowFullscreen=true;
-    $("#video").replaceChildren(f);
+  var VID="HiJA-dV4gy0",yt=null,sonando=false,boton=$("#musica");
+  function iniciarHimno(){
+    if(yt)return;
+    yt=document.createElement("iframe");
+    yt.src="https://www.youtube-nocookie.com/embed/"+VID+"?autoplay=1&rel=0&playsinline=1&enablejsapi=1";
+    yt.title="León, hermano del camino: versión con letra";
+    yt.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";
+    yt.allowFullscreen=true;
+    $("#video").replaceChildren(yt);
+    sonando=true;
+    if(!EN_MARCO){boton.classList.add("visible");}
+    quitarEscuchas();
+  }
+  function orden(f){try{yt.contentWindow.postMessage(JSON.stringify({event:"command",func:f,args:[]}),"*")}catch(e){}}
+  boton.addEventListener("click",function(){
+    if(!yt)return;
+    sonando=!sonando;orden(sonando?"playVideo":"pauseVideo");
+    boton.classList.toggle("pausa",!sonando);boton.setAttribute("aria-pressed",String(!sonando));
+    $("#musica-txt").textContent=sonando?"Pausar el himno":"Reanudar el himno";
   });
+  function primerToque(e){
+    if(e.target.closest&&e.target.closest("#musica"))return;
+    iniciarHimno();
+  }
+  function quitarEscuchas(){["pointerdown","keydown"].forEach(function(ev){document.removeEventListener(ev,primerToque,true)})}
+  ["pointerdown","keydown"].forEach(function(ev){document.addEventListener(ev,primerToque,true)});
+  $("#reproducir").addEventListener("click",iniciarHimno);
 
   /* ---------- Navegación ---------- */
   var navs=[].slice.call(document.querySelectorAll(".secciones a"));
