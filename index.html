@@ -69,6 +69,22 @@ button{font:inherit;color:inherit}
 .aviso-app{display:none;background:#fff;border:2px solid var(--tinta);border-radius:14px;padding:14px 16px;font-size:17px;line-height:1.45;margin:0 0 18px;max-width:36em}
 .aviso-app.visible{display:block}
 
+/* Himno */
+.himno{background:var(--tinta);color:#fff;padding:56px 0}
+.himno-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+.himno h2{font-family:var(--serif);font-weight:800;font-size:clamp(30px,3.4vw,42px);line-height:1.1;margin:0 0 12px}
+.himno p{margin:0 0 10px;font-size:18px;color:#E9E4DA;max-width:30em}
+.himno .creditos{font-size:15px;color:#BDB6A8}
+.himno .creditos a{color:#fff}
+.video{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 24px 50px -24px rgba(0,0,0,.7)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.reproducir{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#000 center/cover no-repeat;display:grid;place-items:center}
+.reproducir::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.55))}
+.reproducir .boton{position:relative;z-index:1;display:flex;align-items:center;gap:12px;background:var(--amarillo);color:var(--tinta);font-weight:700;font-size:18px;padding:14px 22px 14px 16px;border-radius:999px;transition:transform .2s var(--salida)}
+.reproducir .boton svg{width:30px;height:30px}
+.reproducir:hover .boton{transform:scale(1.04)}
+.reproducir:active .boton{transform:scale(.97)}
+
 /* Navegación de secciones */
 .secciones{position:sticky;top:0;z-index:15;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--linea)}
 .secciones ul{list-style:none;margin:0 auto;padding:10px 24px;max-width:var(--ancho);display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
@@ -226,6 +242,8 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
   .portada .entrada{font-size:19px}
   .portada .acciones .btn{flex:1 1 100%}
   .viaje,.ideas,.claves{padding:64px 0 72px}
+  .himno{padding:44px 0}
+  .himno-grid{grid-template-columns:1fr;gap:24px}
   .ruta{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:4px;margin:0 -24px 26px;padding:0 24px;scrollbar-width:none}
   .ruta::-webkit-scrollbar{display:none}
   .ruta::before{left:72px;right:auto;width:480px;top:30px}
@@ -295,6 +313,21 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
 </nav>
 
 <main>
+  <section class="himno" aria-labelledby="t-himno">
+    <div class="envoltura himno-grid">
+      <div>
+        <h2 id="t-himno">Escucha el himno de la visita mientras lees</h2>
+        <p>«León, hermano del camino» fue la canción oficial del viaje del Papa al Perú. Dale play y sigue recorriendo la página: la música seguirá sonando.</p>
+        <p class="creditos">Música y letra: Jaime Montoya. Interpreta: coro Aguchita. Videoclip oficial de TVPerú (IRTP). <a href="https://www.youtube.com/watch?v=UwgH5b95mDQ" target="_blank" rel="noopener">Verlo en YouTube</a></p>
+      </div>
+      <div class="video" id="video">
+        <button class="reproducir" id="reproducir" type="button" aria-label="Reproducir el videoclip oficial de León, hermano del camino" style="background-image:url('https://i.ytimg.com/vi/UwgH5b95mDQ/hqdefault.jpg')">
+          <span class="boton"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.52.85l10.4-6.5a1 1 0 0 0 0-1.7L9.52 4.65A1 1 0 0 0 8 5.5Z"/></svg>Escuchar el himno</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section class="viaje" id="viaje" aria-labelledby="t-viaje">
     <div class="envoltura">
       <div class="cabeza">
@@ -616,6 +649,16 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
     enlazarDescargas();
   }
   pintarPregunta();
+
+  /* ---------- Himno ---------- */
+  $("#reproducir").addEventListener("click",function(){
+    var f=document.createElement("iframe");
+    f.src="https://www.youtube-nocookie.com/embed/UwgH5b95mDQ?autoplay=1&rel=0&playsinline=1";
+    f.title="León, hermano del camino: videoclip oficial";
+    f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";
+    f.allowFullscreen=true;
+    $("#video").replaceChildren(f);
+  });
 
   /* ---------- Navegación ---------- */
   var navs=[].slice.call(document.querySelectorAll(".secciones a"));
