@@ -317,11 +317,11 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
     <div class="envoltura himno-grid">
       <div>
         <h2 id="t-himno">Escucha el himno de la visita mientras lees</h2>
-        <p>«León, hermano del camino» fue la canción oficial del viaje del Papa al Perú. Dale play y sigue recorriendo la página: la música seguirá sonando.</p>
-        <p class="creditos">Música y letra: Jaime Montoya. Interpreta: coro Aguchita. Videoclip oficial de TVPerú (IRTP). <a href="https://www.youtube.com/watch?v=UwgH5b95mDQ" target="_blank" rel="noopener">Verlo en YouTube</a></p>
+        <p>«León, hermano del camino» fue la canción oficial del viaje del Papa al Perú. Esta versión trae la letra en pantalla para cantarla. Dale play y sigue recorriendo la página: la música seguirá sonando.</p>
+        <p class="creditos">Música y letra: Jaime Montoya. Interpreta: coro Aguchita. Versión con letra del Arzobispado de Lima. <a href="https://www.youtube.com/watch?v=HiJA-dV4gy0" target="_blank" rel="noopener">Verlo en YouTube</a></p>
       </div>
       <div class="video" id="video">
-        <button class="reproducir" id="reproducir" type="button" aria-label="Reproducir el videoclip oficial de León, hermano del camino" style="background-image:url('https://i.ytimg.com/vi/UwgH5b95mDQ/hqdefault.jpg')">
+        <button class="reproducir" id="reproducir" type="button" aria-label="Reproducir León, hermano del camino, versión con letra" style="background-image:url('https://i.ytimg.com/vi/HiJA-dV4gy0/hqdefault.jpg')">
           <span class="boton"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.52.85l10.4-6.5a1 1 0 0 0 0-1.7L9.52 4.65A1 1 0 0 0 8 5.5Z"/></svg>Escuchar el himno</span>
         </button>
       </div>
@@ -653,8 +653,8 @@ details[open]>summary .mas{transform:rotate(45deg);background:var(--amarillo)}
   /* ---------- Himno ---------- */
   $("#reproducir").addEventListener("click",function(){
     var f=document.createElement("iframe");
-    f.src="https://www.youtube-nocookie.com/embed/UwgH5b95mDQ?autoplay=1&rel=0&playsinline=1";
-    f.title="León, hermano del camino: videoclip oficial";
+    f.src="https://www.youtube-nocookie.com/embed/HiJA-dV4gy0?autoplay=1&rel=0&playsinline=1";
+    f.title="León, hermano del camino: versión con letra";
     f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";
     f.allowFullscreen=true;
     $("#video").replaceChildren(f);
